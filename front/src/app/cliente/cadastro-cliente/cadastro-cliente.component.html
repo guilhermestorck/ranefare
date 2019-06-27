@@ -1,0 +1,97 @@
+<menu></menu>
+<mat-card>
+  <mat-card-title>Cadastro de Cliente</mat-card-title>
+  <mat-card-content>
+
+    <form class="example-form">
+      <mat-tab-group>
+        <mat-tab label="Dados Pessoais">
+          <div class="container">
+            <div class="row">
+              <mat-form-field class="example-full-width col-6">
+                <input matInput placeholder="Informe o nome do Cliente" [(ngModel)]="cliente.nome" name="nome">
+              </mat-form-field>
+              <mat-form-field class="example-full-width col-6">
+                <input matInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="cliente.email">
+                <mat-hint *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Por favor, informe um email válido
+                </mat-hint>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Informar o Email é
+                  <strong>Obrigatório</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="example-full-width col-6">
+                <input matInput placeholder="Informe o CPF do Cliente" [formControl]="cpfFormControl" [(ngModel)]="cliente.cpfCnpj" name="cpfCnpj" mask="000.000.000-00" (change)="validateCPF()">
+                <mat-error *ngIf="!isValidCPF">
+                  Por favor, informe um CPF válido
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Informar o CPF é
+                  <strong>Obrigatório</strong>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width col-6">
+                <input *ngIf="!isEdited" matInput placeholder="Informe um número de celular para contato" name="telefone1" [(ngModel)]="cliente.telefone1"
+                  mask="(000) 0 0000-0000">
+                <input *ngIf="isEdited" matInput placeholder="Informe um número de celular para contato" name="telefone1" [(ngModel)]="cliente.telefones[0]"
+                  mask="(000) 0 0000-0000">
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Endereço">
+          <div class="container">
+            <div class="row">
+              <mat-form-field class="example-full-width col-6">
+                <input *ngIf="!isEdited" matInput placeholder="Informe o logradouro" name="logradouro" [(ngModel)]="cliente.logradouro">
+                <input *ngIf="isEdited" matInput placeholder="Informe o logradouro" name="logradouro" [(ngModel)]="cliente.enderecos.logradouro">
+              </mat-form-field>
+              <mat-form-field class="example-full-width col-3">
+                <input *ngIf="!isEdited" matInput placeholder="Informe o número" name="numero" [(ngModel)]="cliente.numero">
+                <input *ngIf="isEdited" matInput placeholder="Informe o número" name="numero" [(ngModel)]="cliente.enderecos.numero">
+              </mat-form-field>
+              <mat-form-field class="example-full-width col-3">
+                <input *ngIf="!isEdited" matInput placeholder="Informe o complemento" name="complemento" [(ngModel)]="cliente.complemento">
+                <input *ngIf="isEdited" matInput placeholder="Informe o complemento" name="complemento" [(ngModel)]="cliente.enderecos.complemento">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="example-full-width col-4">
+                <input *ngIf="!isEdited" matInput placeholder="Informe o bairro do Cliente" name="bairro" [(ngModel)]="cliente.bairro">
+                <input *ngIf="isEdited" matInput placeholder="Informe o bairro do Cliente" name="bairro" [(ngModel)]="cliente.enderecos.bairro">
+              </mat-form-field>
+              <mat-form-field class="example-full-width col-4">
+                <input *ngIf="!isEdited" matInput placeholder="Informe o CEP do Cliente" name="cep" [(ngModel)]="cliente.cep" mask="00000-000">
+                <input *ngIf="isEdited" matInput placeholder="Informe o CEP do Cliente" name="cep" [(ngModel)]="cliente.enderecos.cep" mask="00000-000">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field *ngIf="!isEdited" class="ultimo-item-lista col-4">
+                <mat-select placeholder="Cidade do Cliente" [(value)]="cliente.cidadeId">
+                  <mat-option *ngFor="let cidade of cidades" [value]="cidade.id">
+                    {{cidade.nome}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field *ngIf="isEdited" class="ultimo-item-lista col-4">
+                <mat-select placeholder="Cidade do Cliente" [(value)]="cliente.cidadeIdentificador">
+                  <mat-option *ngFor="let cidade of cidades" [value]="cidade.id">
+                    {{cidade.nome}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+      <div class="end-buttons">
+        <button mat-stroked-button routerLink="/cliente">Cancelar</button>
+        <button *ngIf="!isEdited" mat-raised-button color="primary" type="button" (click)="salvar()">Salvar</button>
+        <button *ngIf="isEdited" mat-raised-button color="primary" type="button" (click)="atualizar()">Atualizar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

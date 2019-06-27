@@ -1,0 +1,35 @@
+.example-form {
+    /* min-width: 150px; */
+    /* max-width: 500px; */
+    width: 100%;
+}
+
+.example-full-width {
+    padding-top: 1%;
+    width: 100%;
+}
+
+.mat-radio-button {
+    padding-right: 2%;
+}
+.mat-list-item{
+    padding-top: 4%;
+}
+.ultimo-item-lista{
+    padding-bottom: 4%;
+}
+.mat-stroked-button{
+    margin-right: 1%;
+}
+.end-buttons, .center-buttons, .space-between, .flex-container, .space-around {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+}
+.end-buttons {
+    justify-content: flex-end;
+}

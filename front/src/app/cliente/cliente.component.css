@@ -1,0 +1,28 @@
+table {
+    width: 50%;
+}
+.end-buttons, .center-buttons, .space-between, .flex-container, .space-around {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+}
+.end-buttons {
+    justify-content: flex-end;
+}
+.mat-stroked-button, .mat-raised-button{
+    margin-right: 1%;
+}
+
+.titulo-card {
+    padding-top: 3%;
+    font-size: 21px;
+    padding-bottom: 2%;
+}
+
+#icon-edit-client {
+    color: purple!important;
+}
