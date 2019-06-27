@@ -1,0 +1,8 @@
+rootProject.name = "quotation-service"
+include 'app'
+include 'core'
+include 'contract'
+
+project(":app").name = 'quotation-service-app'
+project(":core").name = 'quotation-service-core'
+project(":contract").name = 'quotation-service-contract'
