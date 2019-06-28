@@ -1,0 +1,17 @@
+{
+	"fixturesFolder": "mocks",
+	"integrationFolder": "features",
+	"pluginsFile": "src/component-test/config/plugins.js",
+	"supportFile": "src/component-test/config/support.js",
+	"screenshotsFolder": "screenshots",
+	"video": false,
+	"waitForAnimations": false,
+	"reporter": "mochawesome",
+	"reporterOptions": {
+		"overwrite": false,
+		"html": false,
+		"json": true
+	},
+	"baseUrl": "http://localhost:9001",
+	"chromeWebSecurity": false
+}
