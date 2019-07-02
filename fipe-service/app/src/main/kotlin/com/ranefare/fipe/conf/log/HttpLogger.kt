@@ -14,21 +14,21 @@ open class HttpLogger {
 
     protected fun logRequest(message: String, request: HttpRequest<*>?) {
         log.debug(
-                message,
-                value("METHOD", request?.method),
-                value("PATH", request?.path),
-                value("DESTINATION", request?.serverName),
-                value("HEADERS", logHeaders(request?.headers)),
-                value("BODY", logBody(request?.body))
+            message,
+            value("METHOD", request?.method),
+            value("PATH", request?.path),
+            value("DESTINATION", request?.serverName),
+            value("HEADERS", logHeaders(request?.headers)),
+            value("BODY", logBody(request?.body))
         )
     }
 
     protected fun logResponse(message: String, response: HttpResponse<*>?) {
         log.debug(
-                message,
-                value("STATUS", response?.status),
-                value("HEADERS", logHeaders(response?.headers)),
-                value("BODY", logBody(response?.body))
+            message,
+            value("STATUS", response?.status),
+            value("HEADERS", logHeaders(response?.headers)),
+            value("BODY", logBody(response?.body))
         )
     }
 

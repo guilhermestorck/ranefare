@@ -2,21 +2,19 @@ package com.ranefare.fipe.gateways.assemblers
 
 import com.ranefare.fipe.core.domains.VehicleDetails
 import com.ranefare.fipe.core.domains.VehicleModel
-import com.ranefare.fipe.gateways.domains.FipeVehicleDetails
+import com.ranefare.fipe.gateways.domains.FipeVehicleDetailsResponse
 import javax.inject.Singleton
 
 @Singleton
 class FipeVehicleDetailsToVehicleDetailsAssembler {
-    fun assemble(fipeVehicleDetails: FipeVehicleDetails, vehicleModel: VehicleModel): VehicleDetails {
-        return VehicleDetails(
-                fuel = fipeVehicleDetails.combustivel,
-                model = vehicleModel.copy(
-                        vehicle = vehicleModel.vehicle.copy(
-                                name = vehicleModel.vehicle.name ?: fipeVehicleDetails.name
-                        )
-                ),
-                price = fipeVehicleDetails.preco,
-                year = fipeVehicleDetails.ano_modelo
-        )
-    }
+    fun assemble(fipeVehicleDetailsResponse: FipeVehicleDetailsResponse, vehicleModel: VehicleModel) = VehicleDetails(
+        fuel = fipeVehicleDetailsResponse.combustivel,
+        model = vehicleModel.copy(
+            vehicle = vehicleModel.vehicle.copy(
+                name = vehicleModel.vehicle.name ?: fipeVehicleDetailsResponse.name
+            )
+        ),
+        price = fipeVehicleDetailsResponse.preco,
+        year = fipeVehicleDetailsResponse.ano_modelo
+    )
 }

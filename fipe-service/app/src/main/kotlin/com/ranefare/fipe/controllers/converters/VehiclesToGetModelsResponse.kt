@@ -9,11 +9,13 @@ import javax.inject.Singleton
 class VehiclesToGetModelsResponse {
     fun assemble(models: List<Vehicle>): GetModelsResponse {
         return GetModelsResponse(
-                models = models.map { vehicle -> ModelResponse(
-                        modelId = vehicle.id,
-                        modelName = vehicle.name.orEmpty(),
-                        brandId = vehicle.brand.id
-                ) }
+            models = models.map { vehicle ->
+                ModelResponse(
+                    modelId = vehicle.id,
+                    modelName = vehicle.name.orEmpty(),
+                    brandId = vehicle.brand.id
+                )
+            }
         )
     }
 }

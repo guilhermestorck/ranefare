@@ -5,16 +5,16 @@ import com.ranefare.fipe.core.domains.VehicleDetails
 import javax.inject.Singleton
 
 @Singleton
-class VehicleDetailsToGetDetailsResponse{
+class VehicleDetailsToGetDetailsResponse {
     fun assemble(details: VehicleDetails): GetDetailsResponse {
         return GetDetailsResponse(
-                brandId = details.model.vehicle.brand.id,
-                brandName = details.model.vehicle.brand.name!!,
-                fuel = details.fuel,
-                modelId = details.model.vehicle.id,
-                modelName = details.model.vehicle.name!!,
-                price = details.price,
-                year = details.year
+            brandId = details.model.vehicle.brand.id,
+            brandName = details.model.vehicle.brand.name!!,
+            fuel = details.fuel,
+            modelId = details.model.vehicle.id,
+            modelName = details.model.vehicle.name!!,
+            price = details.price,
+            year = details.year
         )
     }
 }

@@ -19,50 +19,50 @@ import io.micronaut.http.annotation.Get
 
 @Controller("/fipe")
 class FipeController(
-        private val obtainVehicleBrands: ObtainVehicleBrands,
-        private val obtainVehicles: ObtainVehicles,
-        private val obtainDetails: ObtainDetails,
-        private val vehicleBrandsToGetBrandsResponse: VehicleBrandsToGetBrandsResponse,
-        private val vehiclesToGetModelsResponse: VehiclesToGetModelsResponse,
-        private val vehicleDetailsToGetDetailsResponse: VehicleDetailsToGetDetailsResponse
+    private val obtainVehicleBrands: ObtainVehicleBrands,
+    private val obtainVehicles: ObtainVehicles,
+    private val obtainDetails: ObtainDetails,
+    private val vehicleBrandsToGetBrandsResponse: VehicleBrandsToGetBrandsResponse,
+    private val vehiclesToGetModelsResponse: VehiclesToGetModelsResponse,
+    private val vehicleDetailsToGetDetailsResponse: VehicleDetailsToGetDetailsResponse
 ) : FipeContract {
 
     @Get("/brands")
     override fun getBrands(): HttpResponse<GetBrandsResponse> {
         return HttpResponse.ok(
-                vehicleBrandsToGetBrandsResponse.assemble(
-                        obtainVehicleBrands.execute(VehicleType.CARS)
-                )
+            vehicleBrandsToGetBrandsResponse.assemble(
+                obtainVehicleBrands.execute(VehicleType.CARS)
+            )
         )
     }
 
     @Get("/brands/{brandId}/models")
     override fun getModels(brandId: Int): HttpResponse<GetModelsResponse> {
         return HttpResponse.ok(
-                vehiclesToGetModelsResponse.assemble(
-                        obtainVehicles.execute(VehicleBrand(
-                                id = brandId,
-                                name = null,
-                                vehicleType = VehicleType.CARS
-                        ))
-                )
+            vehiclesToGetModelsResponse.assemble(
+                obtainVehicles.execute(VehicleBrand(
+                    id = brandId,
+                    name = null,
+                    vehicleType = VehicleType.CARS
+                ))
+            )
         )
     }
 
     @Get("/brands/{brandId}/models/{modelId}/details")
     override fun getDetails(brandId: Int, modelId: String): HttpResponse<GetDetailsResponse> {
         return HttpResponse.ok(
-                vehicleDetailsToGetDetailsResponse.assemble(
-                        obtainDetails.execute(Vehicle(
-                                id = modelId,
-                                name = null,
-                                brand = VehicleBrand(
-                                    id = brandId,
-                                    name = null,
-                                    vehicleType = VehicleType.CARS
-                                )
-                        ))
-                )
+            vehicleDetailsToGetDetailsResponse.assemble(
+                obtainDetails.execute(Vehicle(
+                    id = modelId,
+                    name = null,
+                    brand = VehicleBrand(
+                        id = brandId,
+                        name = null,
+                        vehicleType = VehicleType.CARS
+                    )
+                ))
+            )
         )
     }
 }

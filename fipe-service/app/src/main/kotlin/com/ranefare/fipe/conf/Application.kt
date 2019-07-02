@@ -7,8 +7,8 @@ object Application {
     @JvmStatic
     fun main(args: Array<String>) {
         Micronaut.build()
-                .packages("com.ranefare.fipe")
-                .mainClass(Application.javaClass)
-                .start()
+            .packages("com.ranefare.fipe")
+            .mainClass(Application.javaClass)
+            .start()
     }
 }

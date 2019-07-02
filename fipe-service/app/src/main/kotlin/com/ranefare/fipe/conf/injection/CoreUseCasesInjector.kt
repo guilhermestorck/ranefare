@@ -9,19 +9,19 @@ import javax.inject.Singleton
 
 @Factory
 class CoreUseCasesInjector {
-
+ 
     @Singleton
-    fun injectObtainVehicleBrands(fipeGateway: FipeGateway): ObtainVehicleBrands{
+    fun injectObtainVehicleBrands(fipeGateway: FipeGateway): ObtainVehicleBrands {
         return ObtainVehicleBrands(fipeGateway)
     }
 
     @Singleton
-    fun injectObtainVehicles(fipeGateway: FipeGateway): ObtainVehicles{
+    fun injectObtainVehicles(fipeGateway: FipeGateway): ObtainVehicles {
         return ObtainVehicles(fipeGateway)
     }
 
     @Singleton
-    fun injectObtainDetails(fipeGateway: FipeGateway): ObtainDetails{
+    fun injectObtainDetails(fipeGateway: FipeGateway): ObtainDetails {
         return ObtainDetails(fipeGateway)
     }
 }

@@ -14,8 +14,8 @@ class HttpServerLogger : HttpServerFilter, HttpLogger() {
 
     override fun doFilter(request: HttpRequest<*>?, chain: ServerFilterChain?): Publisher<MutableHttpResponse<*>> {
         return Flowable.fromCallable { logRequest(request) }
-                .switchMap { chain?.proceed(request) }
-                .doOnNext { response -> logResponse(response) }
+            .switchMap { chain?.proceed(request) }
+            .doOnNext { response -> logResponse(response) }
     }
 
     private fun logRequest(request: HttpRequest<*>?) {

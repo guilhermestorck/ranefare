@@ -1,11 +1,10 @@
 package com.ranefare.fipe.gateways.domains
 
-data class FipeVehicleModel (
-    val fipe_codigo: String?,
+data class FipeVehicleResponse(
     val fipe_marca: String?,
+    val fipe_name: String?,
     val id: String,
     val key: String?,
     val marca: String?,
-    val name: String,
-    val veiculo: String?
+    val name: String
 )

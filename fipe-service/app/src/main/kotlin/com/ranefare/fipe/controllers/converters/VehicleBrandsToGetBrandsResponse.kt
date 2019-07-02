@@ -7,12 +7,14 @@ import javax.inject.Singleton
 
 @Singleton
 class VehicleBrandsToGetBrandsResponse {
-    fun assemble(brands: List<VehicleBrand>): GetBrandsResponse{
+    fun assemble(brands: List<VehicleBrand>): GetBrandsResponse {
         return GetBrandsResponse(
-                brands = brands.map { brand -> BrandResponse(
-                        brandId = brand.id,
-                        brandName = brand.name.orEmpty()
-                ) }
+            brands = brands.map { brand ->
+                BrandResponse(
+                    brandId = brand.id,
+                    brandName = brand.name.orEmpty()
+                )
+            }
         )
     }
 }

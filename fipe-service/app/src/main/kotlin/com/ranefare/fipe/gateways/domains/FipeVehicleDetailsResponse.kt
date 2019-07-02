@@ -1,6 +1,6 @@
 package com.ranefare.fipe.gateways.domains
 
-data class FipeVehicleDetails(
+data class FipeVehicleDetailsResponse(
     val ano_modelo: String,
     val combustivel: String,
     val fipe_codigo: String?,
