@@ -1,0 +1,8 @@
+rootProject.name = "fipe-service"
+include 'app'
+include 'core'
+include 'contract'
+
+project(":app").name = 'fipe-service-app'
+project(":core").name = 'fipe-service-core'
+project(":contract").name = 'fipe-service-contract'
