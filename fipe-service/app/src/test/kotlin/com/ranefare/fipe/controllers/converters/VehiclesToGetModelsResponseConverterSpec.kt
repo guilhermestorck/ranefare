@@ -15,9 +15,9 @@ class VehiclesToGetModelsResponseConverterSpec : Spek({
 
     val vehiclesToGetModelsResponseConverter by memoized { VehiclesToGetModelsResponseConverter() }
 
-    describe("#assemble") {
+    describe("#convert") {
 
-        it("assemble many entities correctly") {
+        it("convert many entities correctly") {
             val vehicles = listOf(
                 Vehicle(
                     brand = VehicleBrand(id = 21, name = "Fiat", vehicleType = VehicleType.CARS),
@@ -36,7 +36,7 @@ class VehiclesToGetModelsResponseConverterSpec : Spek({
                 )
             )
 
-            val response = vehiclesToGetModelsResponseConverter.assemble(vehicles)
+            val response = vehiclesToGetModelsResponseConverter.convert(vehicles)
 
             with(response) {
                 assertThat(models, hasSize(3))
@@ -46,7 +46,7 @@ class VehiclesToGetModelsResponseConverterSpec : Spek({
             }
         }
 
-        it("don't assemble when has entity with null name") {
+        it("don't convert when has entity with null name") {
             val vehicles = listOf(
                 Vehicle(
                     brand = VehicleBrand(id = 21, name = "Fiat", vehicleType = VehicleType.CARS),
@@ -67,7 +67,7 @@ class VehiclesToGetModelsResponseConverterSpec : Spek({
 
 
             try {
-                vehiclesToGetModelsResponseConverter.assemble(vehicles)
+                vehiclesToGetModelsResponseConverter.convert(vehicles)
                 fail("expected an exception")
             } catch (ex: NullPointerException) {
             }

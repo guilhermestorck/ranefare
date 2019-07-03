@@ -7,9 +7,9 @@ data class FipeVehicleDetailsResponse(
     val id: String?,
     val key: String?,
     val marca: String?,
-    val name: String?,
+    val name: String,
     val preco: String,
     val referencia: String?,
-    val time: Int?,
+    val time: Double?,
     val veiculo: String?
 )

@@ -11,9 +11,9 @@ class VehicleDetailsToGetDetailsResponseConverterSpec : Spek({
 
     val vehicleDetailsToGetDetailsResponseConverter by memoized { VehicleDetailsToGetDetailsResponseConverter() }
 
-    describe("#assemble") {
+    describe("#convert") {
 
-        it("assemble many entities correctly") {
+        it("convert many entities correctly") {
             val vehicleDetails = VehicleDetails(
                 fuel = "Gasolina",
                 model = VehicleModel(
@@ -29,7 +29,7 @@ class VehicleDetailsToGetDetailsResponseConverterSpec : Spek({
                 year = "1987"
             )
 
-            val response = vehicleDetailsToGetDetailsResponseConverter.assemble(vehicleDetails)
+            val response = vehicleDetailsToGetDetailsResponseConverter.convert(vehicleDetails)
 
             with(response) {
                 assertThat(brandId, equalTo(21))
@@ -42,7 +42,7 @@ class VehicleDetailsToGetDetailsResponseConverterSpec : Spek({
             }
         }
 
-        it("don't assemble when has entity with null brandName") {
+        it("don't convert when has entity with null brandName") {
             val vehicleDetails = VehicleDetails(
                 fuel = "Gasolina",
                 model = VehicleModel(
@@ -59,13 +59,13 @@ class VehicleDetailsToGetDetailsResponseConverterSpec : Spek({
             )
 
             try {
-                vehicleDetailsToGetDetailsResponseConverter.assemble(vehicleDetails)
+                vehicleDetailsToGetDetailsResponseConverter.convert(vehicleDetails)
                 fail("expected an exception")
             } catch (ex: NullPointerException) {
             }
         }
 
-        it("don't assemble when has entity with null modelName") {
+        it("don't convert when has entity with null modelName") {
             val vehicleDetails = VehicleDetails(
                 fuel = "Gasolina",
                 model = VehicleModel(
@@ -82,7 +82,7 @@ class VehicleDetailsToGetDetailsResponseConverterSpec : Spek({
             )
 
             try {
-                vehicleDetailsToGetDetailsResponseConverter.assemble(vehicleDetails)
+                vehicleDetailsToGetDetailsResponseConverter.convert(vehicleDetails)
                 fail("expected an exception")
             } catch (ex: NullPointerException) {
             }

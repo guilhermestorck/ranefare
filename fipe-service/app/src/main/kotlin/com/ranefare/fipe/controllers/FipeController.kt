@@ -28,18 +28,16 @@ class FipeController(
 ) : FipeContract {
 
     @Get("/brands")
-    override fun getBrands(): HttpResponse<GetBrandsResponse> {
-        return HttpResponse.ok(
-            vehicleBrandsToGetBrandsResponseConverter.assemble(
-                obtainVehicleBrands.execute(VehicleType.CARS)
-            )
+    override fun getBrands(): HttpResponse<GetBrandsResponse> = HttpResponse.ok(
+        vehicleBrandsToGetBrandsResponseConverter.convert(
+            obtainVehicleBrands.execute(VehicleType.CARS)
         )
-    }
+    )
 
     @Get("/brands/{brandId}/models")
     override fun getModels(brandId: Int): HttpResponse<GetModelsResponse> {
         return HttpResponse.ok(
-            vehiclesToGetModelsResponseConverter.assemble(
+            vehiclesToGetModelsResponseConverter.convert(
                 obtainVehicles.execute(VehicleBrand(
                     id = brandId,
                     name = null,
@@ -52,7 +50,7 @@ class FipeController(
     @Get("/brands/{brandId}/models/{modelId}/details")
     override fun getDetails(brandId: Int, modelId: String): HttpResponse<GetDetailsResponse> {
         return HttpResponse.ok(
-            vehicleDetailsToGetDetailsResponseConverter.assemble(
+            vehicleDetailsToGetDetailsResponseConverter.convert(
                 obtainDetails.execute(Vehicle(
                     id = modelId,
                     name = null,

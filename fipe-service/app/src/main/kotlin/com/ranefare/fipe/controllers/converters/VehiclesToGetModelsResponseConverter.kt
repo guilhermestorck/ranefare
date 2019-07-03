@@ -7,15 +7,13 @@ import javax.inject.Singleton
 
 @Singleton
 class VehiclesToGetModelsResponseConverter {
-    fun assemble(models: List<Vehicle>): GetModelsResponse {
-        return GetModelsResponse(
-            models = models.map { vehicle ->
-                ModelResponse(
-                    modelId = vehicle.id,
-                    modelName = vehicle.name!!,
-                    brandId = vehicle.brand.id
-                )
-            }
-        )
-    }
+    fun convert(models: List<Vehicle>): GetModelsResponse = GetModelsResponse(
+        models = models.map { vehicle ->
+            ModelResponse(
+                modelId = vehicle.id,
+                modelName = vehicle.name!!,
+                brandId = vehicle.brand.id
+            )
+        }
+    )
 }
