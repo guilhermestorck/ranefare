@@ -12,7 +12,7 @@ class FipeVehicleModelToVehicleModelAssembler {
         name = fipeVehicleModelResponse.name,
         vehicle = vehicle.copy(
             brand = vehicle.brand.copy(
-                name = vehicle.brand.name ?: fipeVehicleModelResponse.marca
+                name = vehicle.brand.name ?: fipeVehicleModelResponse.fipe_marca
             )
         )
     )

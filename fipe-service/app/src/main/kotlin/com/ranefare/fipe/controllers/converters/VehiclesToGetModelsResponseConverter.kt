@@ -6,13 +6,13 @@ import com.ranefare.fipe.core.domains.Vehicle
 import javax.inject.Singleton
 
 @Singleton
-class VehiclesToGetModelsResponse {
+class VehiclesToGetModelsResponseConverter {
     fun assemble(models: List<Vehicle>): GetModelsResponse {
         return GetModelsResponse(
             models = models.map { vehicle ->
                 ModelResponse(
                     modelId = vehicle.id,
-                    modelName = vehicle.name.orEmpty(),
+                    modelName = vehicle.name!!,
                     brandId = vehicle.brand.id
                 )
             }

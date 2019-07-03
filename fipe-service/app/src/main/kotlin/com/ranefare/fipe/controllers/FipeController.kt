@@ -4,9 +4,9 @@ import com.ranefare.fipe.contract.contracts.FipeContract
 import com.ranefare.fipe.contract.domains.getBrands.GetBrandsResponse
 import com.ranefare.fipe.contract.domains.getDetails.GetDetailsResponse
 import com.ranefare.fipe.contract.domains.getModels.GetModelsResponse
-import com.ranefare.fipe.controllers.converters.VehicleBrandsToGetBrandsResponse
-import com.ranefare.fipe.controllers.converters.VehicleDetailsToGetDetailsResponse
-import com.ranefare.fipe.controllers.converters.VehiclesToGetModelsResponse
+import com.ranefare.fipe.controllers.converters.VehicleBrandsToGetBrandsResponseConverter
+import com.ranefare.fipe.controllers.converters.VehicleDetailsToGetDetailsResponseConverter
+import com.ranefare.fipe.controllers.converters.VehiclesToGetModelsResponseConverter
 import com.ranefare.fipe.core.domains.Vehicle
 import com.ranefare.fipe.core.domains.VehicleBrand
 import com.ranefare.fipe.core.domains.VehicleType
@@ -22,15 +22,15 @@ class FipeController(
     private val obtainVehicleBrands: ObtainVehicleBrands,
     private val obtainVehicles: ObtainVehicles,
     private val obtainDetails: ObtainDetails,
-    private val vehicleBrandsToGetBrandsResponse: VehicleBrandsToGetBrandsResponse,
-    private val vehiclesToGetModelsResponse: VehiclesToGetModelsResponse,
-    private val vehicleDetailsToGetDetailsResponse: VehicleDetailsToGetDetailsResponse
+    private val vehicleBrandsToGetBrandsResponseConverter: VehicleBrandsToGetBrandsResponseConverter,
+    private val vehiclesToGetModelsResponseConverter: VehiclesToGetModelsResponseConverter,
+    private val vehicleDetailsToGetDetailsResponseConverter: VehicleDetailsToGetDetailsResponseConverter
 ) : FipeContract {
 
     @Get("/brands")
     override fun getBrands(): HttpResponse<GetBrandsResponse> {
         return HttpResponse.ok(
-            vehicleBrandsToGetBrandsResponse.assemble(
+            vehicleBrandsToGetBrandsResponseConverter.assemble(
                 obtainVehicleBrands.execute(VehicleType.CARS)
             )
         )
@@ -39,7 +39,7 @@ class FipeController(
     @Get("/brands/{brandId}/models")
     override fun getModels(brandId: Int): HttpResponse<GetModelsResponse> {
         return HttpResponse.ok(
-            vehiclesToGetModelsResponse.assemble(
+            vehiclesToGetModelsResponseConverter.assemble(
                 obtainVehicles.execute(VehicleBrand(
                     id = brandId,
                     name = null,
@@ -52,7 +52,7 @@ class FipeController(
     @Get("/brands/{brandId}/models/{modelId}/details")
     override fun getDetails(brandId: Int, modelId: String): HttpResponse<GetDetailsResponse> {
         return HttpResponse.ok(
-            vehicleDetailsToGetDetailsResponse.assemble(
+            vehicleDetailsToGetDetailsResponseConverter.assemble(
                 obtainDetails.execute(Vehicle(
                     id = modelId,
                     name = null,

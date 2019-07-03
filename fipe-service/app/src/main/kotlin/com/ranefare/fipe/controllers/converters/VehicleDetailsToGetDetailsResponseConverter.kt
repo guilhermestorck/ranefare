@@ -5,7 +5,7 @@ import com.ranefare.fipe.core.domains.VehicleDetails
 import javax.inject.Singleton
 
 @Singleton
-class VehicleDetailsToGetDetailsResponse {
+class VehicleDetailsToGetDetailsResponseConverter {
     fun assemble(details: VehicleDetails): GetDetailsResponse {
         return GetDetailsResponse(
             brandId = details.model.vehicle.brand.id,
