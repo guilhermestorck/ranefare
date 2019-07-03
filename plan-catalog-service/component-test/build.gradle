@@ -11,6 +11,8 @@ buildscript {
 
 apply plugin: 'kotlin'
 
+group = 'plan-catalog-service'
+
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
@@ -37,6 +39,10 @@ dependencies {
 
     testCompile 'io.cucumber:cucumber-java8:2.3.1'
     testCompile 'io.cucumber:cucumber-junit:2.3.1'
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.2.0"
+
+    runtime "org.postgresql:postgresql:42.2.4"
 }
 
 configurations {

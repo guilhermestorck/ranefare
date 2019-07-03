@@ -2,8 +2,8 @@ package  conf
 
 enum class Hosts {
 
-    CATALOG {
-        override fun address() = Config.getEnv("catalog_service_url", default = "http://localhost:8080")
+    APP {
+        override fun address() = Config.getEnv("app_url", default = "http://localhost:8082")
     };
 
     abstract fun address(): String
