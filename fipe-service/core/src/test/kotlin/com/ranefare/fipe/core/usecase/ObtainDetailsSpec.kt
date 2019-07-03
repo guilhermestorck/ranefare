@@ -54,7 +54,7 @@ class ObtainDetailsSpec : Spek({
             } catch (e: FipeIntegrationException) {
                 with(e) {
                     assertThat(message, equalTo("test"))
-                    assertThat(throwable, equalTo(throwable))
+                    assertThat(cause, equalTo(throwable))
                 }
             }
 
@@ -79,7 +79,7 @@ class ObtainDetailsSpec : Spek({
             } catch (e: FipeIntegrationException) {
                 with(e) {
                     assertThat(message, equalTo("test"))
-                    assertThat(throwable, equalTo(throwable))
+                    assertThat(cause, equalTo(throwable))
                 }
             }
 

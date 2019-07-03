@@ -45,7 +45,7 @@ class ObtainVehiclesSpec : Spek({
             } catch (e: FipeIntegrationException) {
                 with(e) {
                     assertThat(message, equalTo("test"))
-                    assertThat(throwable, equalTo(throwable))
+                    assertThat(cause, equalTo(throwable))
                 }
             }
 
