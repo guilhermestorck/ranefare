@@ -13,15 +13,27 @@ class DatabaseSteps : En {
             DatabaseGateway.cleanDatabase()
         }
 
-        Then("^the \"([^\"]*)\" table contains (\\d+) records$") { tableName: String, count: Int ->
-            assertEquals(DatabaseGateway.countRows(tableName), count)
+        Given("^the \"([^\"]*)\" table has the following rows:$") { tableName: String, rows: DataTable ->
+            rows.asMaps(String::class.java, String::class.java).forEach { row ->
+                DatabaseGateway.insertRow(tableName, row)
+            }
+        }
+
+        Then("^the \"([^\"]*)\" table contains (\\d+) rows$") { tableName: String, count: Int ->
+            val rowCount = DatabaseGateway.countRows(tableName)
+            val assertErrorMessage = "The table $tableName contains $rowCount rows"
+
+            assertEquals(assertErrorMessage, rowCount, count)
         }
 
         Then("the \"([^\"]*)\" table contains the following rows:") { tableName: String, rows: DataTable ->
             rows.asMaps(String::class.java, String::class.java).forEach { row ->
-                assertEquals(DatabaseGateway.containsRow(tableName, row), true)
+                val assertErrorMessage = "The row $row was not found on table \"$tableName\""
+
+                assertEquals(assertErrorMessage, DatabaseGateway.containsRow(tableName, row), true)
             }
         }
+
     }
 
 }

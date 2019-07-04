@@ -13,7 +13,12 @@ object FilesGateway {
     }
 
     fun getFileAsString(filePath: String): String {
-        return this::class.java.getResource(filePath)
-            .readText(Charsets.UTF_8)
+        try {
+            return this::class.java.getResource(filePath)
+                .readText(Charsets.UTF_8)
+        } catch (e: Exception) {
+            print("File $filePath was not found")
+            throw e
+        }
     }
 }

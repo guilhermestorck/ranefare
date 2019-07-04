@@ -42,7 +42,7 @@ dependencies {
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.2.0"
 
-    runtime "org.postgresql:postgresql:42.2.4"
+    testCompile "org.postgresql:postgresql:42.2.4"
 }
 
 configurations {

@@ -40,4 +40,13 @@ object DatabaseGateway {
         resultSet.next()
         return resultSet.getInt("count") > 0
     }
+
+    fun insertRow(tableName: String, row: Map<String, String>) {
+        val orderedRow = row.toList()
+        val columns = orderedRow.map { it.first }.joinToString(", ")
+        val values = orderedRow.map { "'${it.second}'" }.joinToString(", ")
+
+        val sql = "INSERT INTO $tableName($columns) VALUES ($values)"
+        connection.prepareStatement(sql).execute()
+    }
 }
