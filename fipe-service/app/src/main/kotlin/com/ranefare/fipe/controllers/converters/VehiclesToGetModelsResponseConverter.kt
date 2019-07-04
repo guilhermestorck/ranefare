@@ -8,11 +8,11 @@ import javax.inject.Singleton
 @Singleton
 class VehiclesToGetModelsResponseConverter {
     fun convert(models: List<Vehicle>): GetModelsResponse = GetModelsResponse(
+        brandId = models.first().brand.id,
         models = models.map { vehicle ->
             ModelResponse(
                 modelId = vehicle.id,
-                modelName = vehicle.name!!,
-                brandId = vehicle.brand.id
+                modelName = vehicle.name!!
             )
         }
     )

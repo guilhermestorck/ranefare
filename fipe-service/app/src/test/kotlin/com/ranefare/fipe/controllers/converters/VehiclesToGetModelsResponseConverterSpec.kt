@@ -5,8 +5,7 @@ import com.ranefare.fipe.core.domains.Vehicle
 import com.ranefare.fipe.core.domains.VehicleBrand
 import com.ranefare.fipe.core.domains.VehicleType
 import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.hasItem
-import org.hamcrest.Matchers.hasSize
+import org.hamcrest.Matchers.*
 import org.junit.jupiter.api.fail
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
@@ -39,10 +38,11 @@ class VehiclesToGetModelsResponseConverterSpec : Spek({
             val response = vehiclesToGetModelsResponseConverter.convert(vehicles)
 
             with(response) {
+                assertThat(brandId, equalTo(21))
                 assertThat(models, hasSize(3))
-                assertThat(models, hasItem(ModelResponse(brandId = 21, modelId = "437", modelName = "147 C/ CL")))
-                assertThat(models, hasItem(ModelResponse(brandId = 21, modelId = "438", modelName = "147 Furgão (todos)")))
-                assertThat(models, hasItem(ModelResponse(brandId = 21, modelId = "439", modelName = "147 Pick-Up (todas)")))
+                assertThat(models, hasItem(ModelResponse(modelId = "437", modelName = "147 C/ CL")))
+                assertThat(models, hasItem(ModelResponse(modelId = "438", modelName = "147 Furgão (todos)")))
+                assertThat(models, hasItem(ModelResponse(modelId = "439", modelName = "147 Pick-Up (todas)")))
             }
         }
 
