@@ -15,7 +15,7 @@ dev-dependencies :
 	docker-compose -f dependencies/dev-server/docker-compose.dev.yml up -d --build --force-recreate
 
 .PHONY: run
-run : app/build/libs/app.jar dependencies/dev-server
+run : app/build/libs/fipe-service-app.jar dependencies/dev-server
 	docker-compose -f dependencies/dev-server/docker-compose.yml up -d --build --force-recreate
 
 .PHONY: component-tests
