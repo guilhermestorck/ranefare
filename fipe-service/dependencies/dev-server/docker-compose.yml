@@ -8,6 +8,14 @@ services:
     ports:
       - "8500:8500"
 
+  #Mocks
+  mocks:
+    build: ../mocks
+    ports:
+      - "8701:8701"
+      - "8801:8801"
+      - "8901:8901"
+
   app:
     build: ../../
     networks:
@@ -16,9 +24,11 @@ services:
       - "8080:8080"
     depends_on:
       - consul
+      - mocks
     environment:
       - CONSUL_HOST=consul
       - CONSULT_PORT=8500
+      - fipe_endpoint=http://mocks:8701
 
 networks:
 

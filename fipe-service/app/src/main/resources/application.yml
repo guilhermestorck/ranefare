@@ -6,6 +6,8 @@ micronaut:
   server:
     port: 8080
 
+fipe_endpoint: http://fipeapi.appspot.com/api/1
+
 #consul:
 #  client:
 #    registration:
