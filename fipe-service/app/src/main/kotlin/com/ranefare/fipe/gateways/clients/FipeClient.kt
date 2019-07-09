@@ -9,8 +9,7 @@ import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.PathVariable
 import io.micronaut.http.client.annotation.Client
 
-@Client("http://fipeapi.appspot.com/api/1")
-//@Client("fipe_endpoint") TODO: verificar como pegar endpoint a partir do parâmetro
+@Client("\${gateways.fipe.endpoint}")
 interface FipeClient {
 
     @Get("/{vehicleType}/marcas.json")

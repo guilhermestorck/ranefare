@@ -1,15 +1,14 @@
 package steps
 
 import cucumber.api.DataTable
-import cucumber.api.java8.En
+import cucumber.api.java8.Pt
 import gateways.AppGateway
-import gateways.FilesGateway
 import khttp.responses.Response
 import org.junit.Assert.assertEquals
 import org.skyscreamer.jsonassert.JSONAssert
-import parsers.ApiDataTableParser
+import parsers.DataTableParser
 
-class ApiSteps : En {
+class AppSteps : Pt {
 
     private val responses = mutableMapOf<String, Response>()
 
@@ -19,16 +18,17 @@ class ApiSteps : En {
             responses.clear()
         }
 
-        When("^the \"([^\"]*)\" API is called with:$") { apiName: String, dataTable: DataTable ->
+        Quando("o serviço \"([^\"]*)\" da API deste módulo for chamado com os atributos:$")
+        { apiName: String, dataTable: DataTable ->
             responses[apiName] = AppGateway.request(apiName, dataTable)
         }
 
-        Then("^the \"([^\"]*)\" API response has:$") { apiName: String, dataTable: DataTable ->
-            val responseDataTable = ApiDataTableParser.parseResponseDataTable(dataTable)
+        Então("^the \"([^\"]*)\" API response has:$")
+        { apiName: String, dataTable: DataTable ->
+            val responseDataTable = DataTableParser.parseAppResponseDataTable(apiName, dataTable)
 
             if (responseDataTable.body != null) {
-                val expectedBody = FilesGateway.getResponseString(apiName, responseDataTable.body)
-                JSONAssert.assertEquals(expectedBody, responses[apiName]?.text, false)
+                JSONAssert.assertEquals(responseDataTable.body, responses[apiName]?.text, false)
             }
 
             if (responseDataTable.status != null) {

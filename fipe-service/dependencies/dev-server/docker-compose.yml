@@ -28,7 +28,7 @@ services:
     environment:
       - CONSUL_HOST=consul
       - CONSULT_PORT=8500
-      - fipe_endpoint=http://mocks:8701
+      - gateways_fipe_endpoint=http://mocks:8701
 
 networks:
 

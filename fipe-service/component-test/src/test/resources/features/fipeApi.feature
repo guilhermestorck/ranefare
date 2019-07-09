@@ -1,14 +1,18 @@
+# language: pt
 @CleanStubby
-Feature: Fipe API
+Funcionalidade: Comunicação com a API pública conhecida como tabela FIPE
+  A fim de facilitar o meu contexto de negócio
+  Eu quero obter informações da tabela FIPE e selecionar de forma estruturada apenas as informações que preciso
 
-  Scenario: Create an coverage item using the API
-    When the "create insurance coverage item" API is called with:
-      | method | POST                               |
-      | body   | create-quake-coverage-item-request |
-    Then the "create insurance coverage item" API response has:
-      | status | 201                                 |
-      | body   | create-quake-coverage-item-response |
-    And the "insurance_coverage_items" table contains 1 rows
-    And the "insurance_coverage_items" table contains the following rows:
-      | name  | description                            |
-      | quake | Protecao contra terremotos e maremotos |
+  Cenário: Obtém todas as marcas de carros
+    Dado um mock no serviço "obter marcas de carros" da API FIPE com requisição e resposta com os atributos:
+      | request  | method: GET | body: get-brands       |                                  |
+      | response | status: 200 | body: get-brands-OK    | header: [h1: v1, h1: v1, h1: v1] |
+      | response | status: 200 | body: get-brands-OK    | header: [h1: v1, h1: v1]         |
+      | response | status: 500 | body: get-brands-ERROR |                                  |
+    Quando o serviço "marcas por tipo de veículo" da API deste módulo for chamado com os atributos:
+      | method | GET                |
+      | body   | get-brands-request |
+    Então o serviço "marcas por tipo de veículo" da API deste módulo responde com os atributos:
+      | status | 200                 |
+      | body   | get-brands-response |

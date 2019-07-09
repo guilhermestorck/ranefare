@@ -2,39 +2,53 @@ package gateways
 
 import conf.Hosts
 import cucumber.api.DataTable
+import domains.stubby.StubbyResponse
+import gherkin.deps.com.google.gson.Gson
 import khttp.responses.Response
-import parsers.ApiDataTableParser
+import parsers.DataTableParser
 
 object StubbyGateway {
-
+    private val gson = Gson()
     private val APIS = mapOf(
-        "obtém marcas" to "/fipe/brands",
-        "obtém modelos de uma marca" to "/fipe/brands/{brandId}/models",
-        "obtém detalhes de um modelo" to "/fipe/brands/{brandId}/models/{modelId}/details"
+        "obter marcas de carros" to "/carros/marcas.json",
+        "obter veículos de uma marca" to "/carros/veiculos/{brandId}.json",
+        "obter modelos de um veículo" to "/carros/veiculo/{brandId}/{vehicleId}.json",
+        "obter detalhes de um modelo" to "/carros/veiculo/{brandId}/{vehicleId}/{modelId}.json"
     )
 
-    private fun request(apiName: String, dataTable: DataTable): Response {
-        val requestDataTable =
-            ApiDataTableParser.parseRequestDataTable("${Hosts.MOCKS.address()}${APIS[apiName]}", apiName, dataTable)
+    fun create(apiName: String, dataTable: DataTable): Response {
+        val stubbyRequest =
+            DataTableParser.parseMockRequestDataTable(
+                APIS[apiName],
+                "mocks/fipe/$apiName", dataTable)
 
         return khttp.request(
-            method = requestDataTable.method,
-            url = requestDataTable.url,
-            headers = requestDataTable.headers,
-            json = requestDataTable.body,
-            params = requestDataTable.params
+            method = "POST",
+            url = Hosts.MOCKS_FIPE.address,
+            json = gson.toJson(stubbyRequest)
         )
     }
-//
-//    //@RequestMapping(method = RequestMethod.GET, value = "/")
-//    fun getAllServices(): List<StubbyResponse>
-//
-//    //@RequestMapping(method = RequestMethod.POST, value = "/")
-//    fun create(@RequestBody request: StubbyRequest): ResponseEntity
-//
-//    //@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-//    fun delete(@PathVariable("id") id: Int?)
-//
-//    //@RequestMapping(method = RequestMethod.GET, value = "/{id}")
-//    fun getService(@PathVariable("id") id: Int?): StubbyResponse
+
+    fun delete(id: Int) {
+        khttp.request(
+            method = "DELETE",
+            url = "${Hosts.MOCKS_FIPE.address}/$id"
+        )
+    }
+
+    fun getService(id: Int): StubbyResponse =
+        gson.fromJson(khttp.request(
+            method = "GET",
+            url = "${Hosts.MOCKS_FIPE.address}/$id"
+        ).text, StubbyResponse::class.java)
+
+    fun getAllServices(): List<StubbyResponse> =
+        gson.fromJson(khttp.request(
+            method = "GET",
+            url = Hosts.MOCKS_FIPE.address
+        ).text, listOf<StubbyResponse>()::class.java)
+
+    fun deleteAllServices() {
+        getAllServices().forEach { service -> delete(service.id) }
+    }
 }
