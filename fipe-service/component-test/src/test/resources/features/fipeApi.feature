@@ -6,13 +6,12 @@ Funcionalidade: Comunicação com a API pública conhecida como tabela FIPE
 
   Cenário: Obtém todas as marcas de carros
     Dado um mock no serviço "obter marcas de carros" da API FIPE com requisição e resposta com os atributos:
-      | request  | method: GET | body: get-brands       |                                  |
-      | response | status: 200 | body: get-brands-OK    | header: [h1: v1, h1: v1, h1: v1] |
-      | response | status: 200 | body: get-brands-OK    | header: [h1: v1, h1: v1]         |
-      | response | status: 500 | body: get-brands-ERROR |                                  |
+      | request  | method: GET | body: get-brands    |
+      | response | status: 200 | body: get-brands-OK |
+#      | response | status: 200 | body: get-brands-OK | header: [h1: v1, h1: v1, h1: v1] |
+#      | response | status: 500 |                     |
     Quando o serviço "marcas por tipo de veículo" da API deste módulo for chamado com os atributos:
-      | method | GET                |
-      | body   | get-brands-request |
+      | method | GET |
     Então o serviço "marcas por tipo de veículo" da API deste módulo responde com os atributos:
-      | status | 200                 |
-      | body   | get-brands-response |
+      | status | 200        |
+      | body   | get-brands |

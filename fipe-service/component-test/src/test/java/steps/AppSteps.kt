@@ -18,31 +18,32 @@ class AppSteps : Pt {
             responses.clear()
         }
 
-        Quando("o serviço \"([^\"]*)\" da API deste módulo for chamado com os atributos:$")
+        Quando("^o serviço \"([^\"]*)\" da API deste módulo for chamado com os atributos:$")
         { apiName: String, dataTable: DataTable ->
             responses[apiName] = AppGateway.request(apiName, dataTable)
         }
 
-        Então("^the \"([^\"]*)\" API response has:$")
+        Então("^o serviço \"([^\"]*)\" da API deste módulo responde com os atributos:$")
         { apiName: String, dataTable: DataTable ->
             val responseDataTable = DataTableParser.parseAppResponseDataTable(apiName, dataTable)
 
             if (responseDataTable.body != null) {
-                JSONAssert.assertEquals(responseDataTable.body, responses[apiName]?.text, false)
+                JSONAssert.assertEquals(responseDataTable.body, responses[apiName]?.text, true)
             }
 
             if (responseDataTable.status != null) {
-                val assertErrorMessage = "The \"$apiName\" API response status is ${responseDataTable.status}"
-
-                assertEquals(assertErrorMessage, responseDataTable.status.toInt(), responses[apiName]?.statusCode)
+                assertEquals(
+                    "The \"$apiName\" API response status is ${responseDataTable.status}",
+                    responseDataTable.status.toInt(),
+                    responses[apiName]?.statusCode)
             }
 
             if (responseDataTable.headers != null) {
-                val assertErrorMessage = "The \"$apiName\" API response headers are ${responseDataTable.headers}"
-
-                assertEquals(assertErrorMessage, responseDataTable.headers, responses[apiName]?.headers)
+                assertEquals(
+                    "The \"$apiName\" API response headers are ${responseDataTable.headers}",
+                    responseDataTable.headers,
+                    responses[apiName]?.headers)
             }
-
         }
 
     }

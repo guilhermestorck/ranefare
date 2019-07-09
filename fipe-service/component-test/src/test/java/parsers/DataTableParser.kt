@@ -52,8 +52,8 @@ object DataTableParser {
 
     fun parseMockRequestDataTable(baseUrl: String?, apiName: String, dataTable: DataTable): StubbyRequest {
         val groupedData = getGroupedData(dataTable)
-        val requestMap = parseMappedValues(groupedData[REQUEST] ?: mapOf())[0]
-        val response = parseMappedValues(groupedData[RESPONSE] ?: mapOf())
+        val requestMap = parseMappedValues(groupedData[REQUEST] ?: listOf())[0]
+        val response = parseMappedValues(groupedData[RESPONSE] ?: listOf())
 
         val method = requestMap[METHOD].orEmpty().trim()
         val stringJsonBody = getStringResponseBody(apiName, requestMap[BODY].orEmpty().trim())
@@ -98,11 +98,8 @@ object DataTableParser {
         getJsonRequestBody(apiName, parseSingleValue(BODY, requestData).orEmpty())
 
     private fun getJsonRequestBody(apiName: String, bodyLabel: String): Any? =
-        if (bodyLabel.isBlank()) {
-            null
-        } else {
-            gson.fromJson(FilesGateway.getRequestString(apiName, bodyLabel), Map::class.java)
-        }
+        if (bodyLabel.isBlank()) null
+        else gson.fromJson(FilesGateway.getRequestString(apiName, bodyLabel), Map::class.java)
 
     private fun getStringResponseBody(apiName: String, requestData: Map<String, List<MutableList<String>>>): String? =
         getStringResponseBody(apiName, parseSingleValue(BODY, requestData).orEmpty())
@@ -142,9 +139,15 @@ object DataTableParser {
             key to value
         }.toMap()
 
-    private fun parseMappedValues(mappedValues: String?): Map<String, String> =
-        mappedValues.orEmpty().trim()
-            .removePrefix("[")
+    private fun parseMappedValues(mappedValues: String?): Map<String, String> {
+        val itemTableValue = mappedValues.orEmpty().trim()
+
+        if (!itemTableValue.startsWith("[") || !itemTableValue.endsWith("]"))
+            throw UnsupportedOperationException(
+                "Not valid Mapped value: $itemTableValue. " +
+                    "A Mapped value must be in the format \"[key1: value1, key2: value2, ... , keyN: valueN]\"")
+
+        return itemTableValue.removePrefix("[")
             .removeSuffix("]")
             .split(",").map { pair: String ->
                 val separatedPair = pair.trim().split(":")
@@ -154,4 +157,5 @@ object DataTableParser {
 
                 separatedPair[0].trim() to separatedPair[1].trim()
             }.toMap()
+    }
 }

@@ -3,21 +3,20 @@ package steps
 import cucumber.api.DataTable
 import cucumber.api.java8.Pt
 import gateways.StubbyGateway
-import khttp.responses.Response
 
 class MockFipeSteps : Pt {
 
-    private val responses = mutableMapOf<String, Response>()
+    private val mocks = mutableMapOf<String, Int>()
 
     init {
 
         Before { ->
-            responses.clear()
+            mocks.clear()
         }
 
         Dado("um mock no serviço \"([^\"]*)\" da API FIPE com requisição e resposta com os atributos:$")
         { apiName: String, dataTable: DataTable ->
-            responses[apiName] = StubbyGateway.create(apiName, dataTable)
+            mocks[apiName] = StubbyGateway.create(apiName, dataTable)
         }
 
     }
