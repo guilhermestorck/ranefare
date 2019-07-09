@@ -4,6 +4,8 @@ import { PlanRequest } from '../util/domains/requests/plans.requests';
 import { Brand } from '../util/domains/brand.domain';
 import { ModelResponse } from '../util/domains/responses/model.response';
 import { Detail } from '../util/domains/details.domain';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ValidationCPF } from '../util/validations/validation-cpf';
 
 @Component({
   selector: 'solicitation',
@@ -12,13 +14,13 @@ import { Detail } from '../util/domains/details.domain';
   providers: [FipeService]
 })
 export class SolicitationComponent implements OnInit {
-
   planRequest: PlanRequest = new PlanRequest();
   modelResponse: ModelResponse = new ModelResponse();
   brands: Brand[] = [];
   details: Detail = new Detail();
 
-  constructor(private fipeService: FipeService) { }
+  constructor(private fipeService: FipeService,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getBrands();
@@ -26,20 +28,20 @@ export class SolicitationComponent implements OnInit {
 
   getBrands(): void {
     this.fipeService.getBrands().subscribe(brands => {
-      this.brands = brands;
-    })
+      this.brands = brands.brands;
+    });
   }
 
-  getModels(brandId): void {
-    this.fipeService.getModels(brandId).subscribe(models => {
+  getModels(): void {
+    this.fipeService.getModels(this.planRequest.carBrand).subscribe(models => {
       this.modelResponse = models;
-    })
+    });
   }
 
-  getDetails(brandId, modelId): void {
-    this.fipeService.getDetails(brandId, modelId).subscribe(details => {
-      this.details = details;
-    })
+  getDetails(): void {
+    this.fipeService.getDetails(this.planRequest.carBrand, this.planRequest.carModel).subscribe(details => {
+      this.planRequest.carYear = details.year;
+    });
   }
 
 }

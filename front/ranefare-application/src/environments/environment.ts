@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl:''
+  baseUrlServiceFipe: 'http://localhost:8080/fipe',
+  baseUrlServiceQuotation: 'http://localhost:8080/quotation'
 };
 
 /*

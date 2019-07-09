@@ -1,62 +1,68 @@
-<div class="container">
+<form class="form-solicitation">
+  <div class="container">
 
-  <div class="row justify-content-md-center">
-    <div class="col-4">
-      <h3 class="title">Vamos nos conhecer!</h3>
+    <div class="row justify-content-md-center">
+      <div class="col-4">
+        <h3 class="title">Vamos nos conhecer!</h3>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-md-center select-style">
+      <div class="col-4">
+        <label>Meu carro é um </label>
+        <select class="form-control" type="number" name="brand" [(ngModel)]="planRequest.carBrand" id="brandSelect" (ngModelChange)="getModels()">
+          <option>Selecione</option>
+          <option *ngFor="let brand of brands" [value]="brand.brandId">
+            {{brand.brandName}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center select-style">
+      <div class="col-4">
+        <label>O modelo dele é </label>
+          <select class="form-control" type="number" name="model" [(ngModel)]="planRequest.carModel" id="modelSelect" (ngModelChange)="getDetails()">
+          <option>Selecione</option>
+          <option *ngFor="let model of modelResponse.models" [value]="model.modelId">
+            {{model.modelName}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center select-style">
+      <div class="col-4">
+        <label>O ano dele é </label>
+        <input type="text" disabled="true" class="form-control" placeholder="" name="year" id="year" [(ngModel)]="planRequest.carYear"
+          aria-label="Input component to inform the year of the vehicle">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center select-style">
+      <div class="col-4">
+        <label>Meu veículo </label>
+        <select class="form-control" name="zeroKm" id="zeroKmSelect" [(value)]="planRequest.zeroKm" aria-label="Select component to choose the model of a vehicle">
+          <option [value]="true">
+            é 0Km
+          </option>
+          <option [value]="false">
+            não é 0Km
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-4 form-group">
+        <label for="cpfUser">Meu CPF é</label>
+        <input type="text" mask="000.000.000-00" class="form-control" placeholder="CPF" name="cpf" id="cpfUser" [(ngModel)]="planRequest.cpf">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <button type="button" class="btn btn-info">Continuar</button>
     </div>
   </div>
-
-  <div class="row justify-content-md-center select-style">
-    <div class="col-4">
-      <label>Meu carro é um </label>
-      <select class="form-control" name="brand" (change)="getModels(planRequest.carBrand)" id="brandSelect" [(value)]="planRequest.carBrand" aria-label="Select component to choose the brand of a vehicle">
-        <option *ngFor="let brand of brands" [value]="brand.brandId">
-          {{brand.brandName}}
-        </option>
-      </select>
-    </div>
-  </div>
-
-  <div class="row justify-content-md-center select-style">
-    <div class="col-4">
-      <label>O modelo dele é </label>
-      <select class="form-control" (change)="getDetails(planRequest.carBrand, planRequest.carModel)" disabled="planRequest.carBrand == null" name="model" id="modelSelect" [(value)]="planRequest.carModel" aria-label="Select component to choose the model of a vehicle">
-        <option *ngFor="let model of modelResponse.models" [value]="model.modelId">
-          {{model.modelName}}
-        </option>
-      </select>
-    </div>
-  </div>
-
-  <div class="row justify-content-md-center select-style">
-    <div class="col-4">
-      <label>O ano dele é </label>
-      <input type="text" disabled="true" class="form-control" placeholder="" name="year" id="year" ng-model="planRequest.carYear" aria-label="Input component to inform the year of the vehicle">
-    </div>
-  </div>
-
-  <div class="row justify-content-md-center select-style">
-    <div class="col-4">
-      <label>Meu veículo </label>
-      <select class="form-control" name="zeroKm" id="zeroKmSelect" [(value)]="planRequest.zeroKm" aria-label="Select component to choose the model of a vehicle">
-        <option [value]="true">
-          é 0Km
-        </option>
-        <option [value]="false">
-          não é 0Km
-        </option>
-      </select>
-    </div>
-  </div>
-
-  <div class="row justify-content-md-center">
-    <div class="col-4 form-group">
-      <label for="cpfUser">Meu CPF é</label>
-      <input type="text" mask="999.999.999-99" class="form-control" placeholder="CPF" name="cpf" id="cpfUser" ng-model="planRequest.cpf" aria-label="Input component to inform the owner of the vehicle">
-    </div>
-  </div>
-
-  <div class="row justify-content-md-center">
-    <button type="button" class="btn btn-info">Continuar</button>
-  </div>
-</div>
+</form>
