@@ -5,6 +5,8 @@ micronaut:
     enabled: true
   server:
     port: 8080
+    cors:
+      enabled: true
 
 gateways:
   fipe:
