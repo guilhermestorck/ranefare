@@ -7,7 +7,7 @@ import domains.stubby.StubbyRequest
 import domains.stubby.StubbyRequestBody
 import domains.stubby.StubbyResponseBody
 import gateways.FilesGateway
-import gherkin.deps.com.google.gson.Gson
+import org.json.JSONTokener
 
 object DataTableParser {
     private const val METHOD = "method"
@@ -19,8 +19,6 @@ object DataTableParser {
 
     private const val REQUEST = "request"
     private const val RESPONSE = "response"
-
-    private val gson = Gson()
 
     fun parseAppRequestDataTable(baseUrl: String?, apiName: String, dataTable: DataTable): RequestDataTable {
         val groupedData = getGroupedData(dataTable)
@@ -56,7 +54,7 @@ object DataTableParser {
         val response = parseMappedValues(groupedData[RESPONSE] ?: listOf())
 
         val method = requestMap[METHOD].orEmpty().trim()
-        val stringJsonBody = getStringResponseBody("mocks/fipe/$apiName", requestMap[BODY].orEmpty().trim())
+        val stringJsonBody = getStringRequestBody("mocks/fipe/$apiName", requestMap[BODY].orEmpty().trim())
 
         if (method == "GET" && stringJsonBody != null)
             throw UnsupportedOperationException("A GET request can't have a body.")
@@ -99,10 +97,17 @@ object DataTableParser {
 
     private fun getJsonRequestBody(resourcePath: String, bodyLabel: String): Any? =
         if (bodyLabel.isBlank()) null
-        else gson.fromJson(FilesGateway.getRequestString(resourcePath, bodyLabel), Map::class.java)
+        else JSONTokener(FilesGateway.getRequestString(resourcePath, bodyLabel)).nextValue()
 
     private fun getStringResponseBody(resourcePath: String, requestData: Map<String, List<MutableList<String>>>): String? =
         getStringResponseBody(resourcePath, parseSingleValue(BODY, requestData).orEmpty())
+
+    private fun getStringRequestBody(resourcePath: String, bodyLabel: String): String? =
+        if (bodyLabel.isBlank()) {
+            null
+        } else {
+            FilesGateway.getRequestString(resourcePath, bodyLabel)
+        }
 
     private fun getStringResponseBody(resourcePath: String, bodyLabel: String): String? =
         if (bodyLabel.isBlank()) {

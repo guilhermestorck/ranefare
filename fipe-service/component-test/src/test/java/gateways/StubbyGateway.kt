@@ -6,6 +6,7 @@ import domains.stubby.StubbyResponse
 import gherkin.deps.com.google.gson.Gson
 import gherkin.deps.com.google.gson.reflect.TypeToken
 import khttp.responses.Response
+import org.json.JSONTokener
 import parsers.DataTableParser
 import java.rmi.UnexpectedException
 import java.util.*
@@ -30,7 +31,7 @@ object StubbyGateway {
         val response = khttp.request(
             method = "POST",
             url = Hosts.MOCKS_FIPE.address,
-            data = gson.toJson(stubbyRequest)
+            json = JSONTokener(gson.toJson(stubbyRequest)).nextValue()
         )
 
         return getStubbyId(response) ?: throw UnexpectedException("The stubby didn't return an identifier to mock.")
