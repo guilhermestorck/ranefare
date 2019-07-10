@@ -4,13 +4,13 @@ micronaut:
   config-client:
     enabled: true
   server:
-    port: 8080
+    port: 8081 #8080
     cors:
       enabled: true
 
 gateways:
   fipe:
-    endpoint: http://fipeapi.appspot.com/api/1
+    endpoint: http://localhost:8701 #http://fipeapi.appspot.com/api/1
 
 #consul:
 #  client:
@@ -25,3 +25,8 @@ gateways:
 #     username: ${JDBC_USER:sa}
 #     password: ${JDBC_PASSWORD:""}
 #     driverClassName: ${JDBC_DRIVER:org.h2.Driver}
+#
+#endpoints:
+#  loggers:
+#    enabled: true
+#    sensitive: true
