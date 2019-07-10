@@ -7,7 +7,7 @@ import gateways.StubbyGateway
 class DevSteps : Pt {
 
     @Before("@CleanStubby")
-    fun cleanupStubby(): Unit {
+    fun cleanupStubby() {
         StubbyGateway.deleteAllServices()
     }
 }

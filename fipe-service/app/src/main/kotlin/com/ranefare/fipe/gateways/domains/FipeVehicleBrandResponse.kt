@@ -1,7 +1,7 @@
 package com.ranefare.fipe.gateways.domains
 
 data class FipeVehicleBrandResponse(
-    val fipeName: String?,
+    val fipe_name: String?,
     val id: Int,
     val key: String?,
     val name: String,

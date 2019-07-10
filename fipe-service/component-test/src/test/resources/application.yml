@@ -1,6 +1,0 @@
-gateways:
-  app:
-    endpoint: http://localhost:8080
-  mocks:
-    fipe:
-      endpoint: http://mocks:8901

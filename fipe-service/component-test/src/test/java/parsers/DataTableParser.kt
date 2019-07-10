@@ -26,7 +26,7 @@ object DataTableParser {
         val groupedData = getGroupedData(dataTable)
 
         val method = parseSingleValue(METHOD, groupedData).orEmpty()
-        val jsonBody = getJsonRequestBody(apiName, groupedData)
+        val jsonBody = getJsonRequestBody("app/$apiName", groupedData)
 
         if (method == "GET" && jsonBody != null)
             throw UnsupportedOperationException("A GET request can't have a body.")
@@ -45,7 +45,7 @@ object DataTableParser {
 
         return ResponseDataTable(
             status = parseSingleValue(STATUS, groupedData)?.toInt(),
-            body = getStringResponseBody(apiName, groupedData),
+            body = getStringResponseBody("app/$apiName", groupedData),
             headers = parseMappedValues(HEADER, groupedData)
         )
     }
@@ -56,7 +56,7 @@ object DataTableParser {
         val response = parseMappedValues(groupedData[RESPONSE] ?: listOf())
 
         val method = requestMap[METHOD].orEmpty().trim()
-        val stringJsonBody = getStringResponseBody(apiName, requestMap[BODY].orEmpty().trim())
+        val stringJsonBody = getStringResponseBody("mocks/fipe/$apiName", requestMap[BODY].orEmpty().trim())
 
         if (method == "GET" && stringJsonBody != null)
             throw UnsupportedOperationException("A GET request can't have a body.")
@@ -73,8 +73,8 @@ object DataTableParser {
             response = response.map { mapResponse ->
                 StubbyResponseBody(
                     headers = parseMappedValues(mapResponse[HEADER]),
-                    body = getJsonRequestBody(apiName, mapResponse[BODY].orEmpty()),
-                    status = mapResponse[STATUS]?.toInt()
+                    body = getStringResponseBody("mocks/fipe/$apiName", mapResponse[BODY].orEmpty().trim()),
+                    status = mapResponse[STATUS]?.trim()?.toInt()
                 )
             }
         )
@@ -94,21 +94,21 @@ object DataTableParser {
     private fun getPathParams(requestData: Map<String, List<MutableList<String>>>): Map<String, String> =
         parseMappedValues(PATH_PARAM, requestData) ?: mapOf()
 
-    private fun getJsonRequestBody(apiName: String, requestData: Map<String, List<MutableList<String>>>): Any? =
-        getJsonRequestBody(apiName, parseSingleValue(BODY, requestData).orEmpty())
+    private fun getJsonRequestBody(resourcePath: String, requestData: Map<String, List<MutableList<String>>>): Any? =
+        getJsonRequestBody(resourcePath, parseSingleValue(BODY, requestData).orEmpty())
 
-    private fun getJsonRequestBody(apiName: String, bodyLabel: String): Any? =
+    private fun getJsonRequestBody(resourcePath: String, bodyLabel: String): Any? =
         if (bodyLabel.isBlank()) null
-        else gson.fromJson(FilesGateway.getRequestString(apiName, bodyLabel), Map::class.java)
+        else gson.fromJson(FilesGateway.getRequestString(resourcePath, bodyLabel), Map::class.java)
 
-    private fun getStringResponseBody(apiName: String, requestData: Map<String, List<MutableList<String>>>): String? =
-        getStringResponseBody(apiName, parseSingleValue(BODY, requestData).orEmpty())
+    private fun getStringResponseBody(resourcePath: String, requestData: Map<String, List<MutableList<String>>>): String? =
+        getStringResponseBody(resourcePath, parseSingleValue(BODY, requestData).orEmpty())
 
-    private fun getStringResponseBody(apiName: String, bodyLabel: String): String? =
+    private fun getStringResponseBody(resourcePath: String, bodyLabel: String): String? =
         if (bodyLabel.isBlank()) {
             null
         } else {
-            FilesGateway.getResponseString(apiName, bodyLabel)
+            FilesGateway.getResponseString(resourcePath, bodyLabel)
         }
 
     private fun parseSingleValue(key: String, requestData: Map<String, List<MutableList<String>>>): String? =
@@ -141,6 +141,8 @@ object DataTableParser {
 
     private fun parseMappedValues(mappedValues: String?): Map<String, String> {
         val itemTableValue = mappedValues.orEmpty().trim()
+
+        if (itemTableValue.isBlank()) return mapOf()
 
         if (!itemTableValue.startsWith("[") || !itemTableValue.endsWith("]"))
             throw UnsupportedOperationException(

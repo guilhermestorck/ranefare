@@ -3,25 +3,27 @@ services:
 
   consul:
     image: consul
+    ports:
+      - 8500:8500
     networks:
       - consul-network
-    ports:
-      - "8500:8500"
 
   #Mocks
   mocks:
     build: ../mocks
     ports:
-      - "8701:8701"
-      - "8801:8801"
-      - "8901:8901"
+      - 8701:8701
+      - 8801:8801
+      - 8901:8901
+    networks:
+      - consul-network
 
   app:
     build: ../../
     networks:
       - consul-network
     ports:
-      - "8080:8080"
+      - 8080:8080
     depends_on:
       - consul
       - mocks

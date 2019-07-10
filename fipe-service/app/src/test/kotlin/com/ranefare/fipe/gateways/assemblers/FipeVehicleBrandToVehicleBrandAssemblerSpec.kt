@@ -16,7 +16,7 @@ class FipeVehicleBrandToVehicleBrandAssemblerSpec : Spek({
         it("convert entity with all attributes correctly") {
             val response = fipeVehicleBrandToVehicleBrandAssembler.assemble(
                 FipeVehicleBrandResponse(
-                    fipeName = "Audi",
+                    fipe_name = "Audi",
                     id = 6,
                     key = "audi-6",
                     name = "AUDI",
@@ -33,7 +33,7 @@ class FipeVehicleBrandToVehicleBrandAssemblerSpec : Spek({
         it("convert entity without optional attributes correctly") {
             val response = fipeVehicleBrandToVehicleBrandAssembler.assemble(
                 FipeVehicleBrandResponse(
-                    fipeName = null,
+                    fipe_name = null,
                     id = 6,
                     key = null,
                     name = "AUDI",
