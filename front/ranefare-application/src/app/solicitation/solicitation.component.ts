@@ -14,16 +14,20 @@ import { ValidationCPF } from '../util/validations/validation-cpf';
   providers: [FipeService]
 })
 export class SolicitationComponent implements OnInit {
+
   planRequest: PlanRequest = new PlanRequest();
   modelResponse: ModelResponse = new ModelResponse();
   brands: Brand[] = [];
   details: Detail = new Detail();
+
+  cpfInvalid: Boolean;
 
   constructor(private fipeService: FipeService,
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getBrands();
+    this.cpfInvalid = false;
   }
 
   getBrands(): void {
@@ -42,6 +46,14 @@ export class SolicitationComponent implements OnInit {
     this.fipeService.getDetails(this.planRequest.carBrand, this.planRequest.carModel).subscribe(details => {
       this.planRequest.carYear = details.year;
     });
+  }
+
+  checkCPFIsValid() {
+    if (!ValidationCPF.cpf(this.planRequest.cpf)) {
+      this.cpfInvalid = true;
+    } else {
+      this.cpfInvalid = false;
+    }
   }
 
 }

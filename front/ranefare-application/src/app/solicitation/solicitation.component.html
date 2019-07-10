@@ -23,7 +23,7 @@
     <div class="row justify-content-md-center select-style">
       <div class="col-4">
         <label>O modelo dele é </label>
-          <select class="form-control" type="number" name="model" [(ngModel)]="planRequest.carModel" id="modelSelect" (ngModelChange)="getDetails()">
+        <select class="form-control" type="number" name="model" [(ngModel)]="planRequest.carModel" id="modelSelect" (ngModelChange)="getDetails()">
           <option>Selecione</option>
           <option *ngFor="let model of modelResponse.models" [value]="model.modelId">
             {{model.modelName}}
@@ -56,8 +56,12 @@
 
     <div class="row justify-content-md-center">
       <div class="col-4 form-group">
-        <label for="cpfUser">Meu CPF é</label>
-        <input type="text" mask="000.000.000-00" class="form-control" placeholder="CPF" name="cpf" id="cpfUser" [(ngModel)]="planRequest.cpf">
+        <label for="cpfUser" [ngClass]="{'input-cpf-invalid': cpfInvalid}">Meu CPF é</label>
+        <input (blur)="checkCPFIsValid()" required type="text" mask="000.000.000-00" [ngClass]="{'form-control':true , 'input-cpf-invalid': cpfInvalid}"
+          placeholder="CPF" name="cpf" id="cpfUser" [(ngModel)]="planRequest.cpf">
+        <div *ngIf="cpfInvalid" class="alert-cpf-invalid">
+          CPF Inválido.
+        </div>
       </div>
     </div>
 

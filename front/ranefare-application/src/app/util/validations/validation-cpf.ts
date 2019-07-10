@@ -1,6 +1,6 @@
 export class ValidationCPF {
     
-    public static cpf(cpf: string): boolean {
+    public static cpf(cpf: String): boolean {
         if (cpf == null) {
             return false;
         }

@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path:'solicitation',
     loadChildren:'./solicitation/solicitation.module#SolicitationModule'
+  },
+  {
+    path:'plans',
+    loadChildren:'./plans/plans.module#PlansModule'
   }
 ];
 

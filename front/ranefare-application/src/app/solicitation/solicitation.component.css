@@ -7,3 +7,14 @@
 .form-solicitation {
     width: 100%;
 }
+.alert-cpf-invalid {
+    color: #FF0000;
+    padding-top: 2%;
+    font-size: 13px;
+    padding-left: 1%;
+}
+
+.input-cpf-invalid {
+    border-color: #FF0000;
+    color:#FF0000;
+}
