@@ -16,7 +16,7 @@ class MockFipeSteps : Pt {
 
         Dado("um mock no serviço \"([^\"]*)\" da API FIPE com requisição e resposta com os atributos:$")
         { apiName: String, dataTable: DataTable ->
-            mocks[apiName] = StubbyGateway.create(apiName, dataTable)
+            mocks[apiName] = StubbyGateway.create(apiName, "fipe", dataTable)
         }
 
     }

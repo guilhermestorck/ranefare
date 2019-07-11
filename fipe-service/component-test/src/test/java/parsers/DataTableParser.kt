@@ -48,13 +48,13 @@ object DataTableParser {
         )
     }
 
-    fun parseMockRequestDataTable(baseUrl: String?, apiName: String, dataTable: DataTable): StubbyRequest {
+    fun parseMockRequestDataTable(baseUrl: String?, baseMockFolder: String, apiName: String, dataTable: DataTable): StubbyRequest {
         val groupedData = getGroupedData(dataTable)
         val requestMap = parseMappedValues(groupedData[REQUEST] ?: listOf())[0]
         val response = parseMappedValues(groupedData[RESPONSE] ?: listOf())
 
         val method = requestMap[METHOD].orEmpty().trim()
-        val stringJsonBody = getStringRequestBody("mocks/fipe/$apiName", requestMap[BODY].orEmpty().trim())
+        val stringJsonBody = getStringRequestBody("mocks/$baseMockFolder/$apiName", requestMap[BODY].orEmpty().trim())
 
         if (method == "GET" && stringJsonBody != null)
             throw UnsupportedOperationException("A GET request can't have a body.")
@@ -71,7 +71,7 @@ object DataTableParser {
             response = response.map { mapResponse ->
                 StubbyResponseBody(
                     headers = parseMappedValues(mapResponse[HEADER]),
-                    body = getStringResponseBody("mocks/fipe/$apiName", mapResponse[BODY].orEmpty().trim()),
+                    body = getStringResponseBody("mocks/$baseMockFolder/$apiName", mapResponse[BODY].orEmpty().trim()),
                     status = mapResponse[STATUS]?.trim()?.toInt()
                 )
             }

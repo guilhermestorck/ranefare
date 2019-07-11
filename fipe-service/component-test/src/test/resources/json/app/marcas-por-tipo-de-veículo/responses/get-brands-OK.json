@@ -1,8 +1,360 @@
 {
   "brands": [
     {
+      "brandId": 6,
+      "brandName": "AUDI"
+    },
+    {
+      "brandId": 7,
+      "brandName": "BMW"
+    },
+    {
+      "brandId": 13,
+      "brandName": "CITROEN"
+    },
+    {
+      "brandId": 21,
+      "brandName": "FIAT"
+    },
+    {
+      "brandId": 22,
+      "brandName": "FORD"
+    },
+    {
+      "brandId": 23,
+      "brandName": "CHEVROLET"
+    },
+    {
+      "brandId": 25,
+      "brandName": "HONDA"
+    },
+    {
+      "brandId": 26,
+      "brandName": "HYUNDAI"
+    },
+    {
+      "brandId": 31,
+      "brandName": "KIA"
+    },
+    {
+      "brandId": 39,
+      "brandName": "MERCEDES-BENZ"
+    },
+    {
+      "brandId": 41,
+      "brandName": "MITSUBISHI"
+    },
+    {
+      "brandId": 43,
+      "brandName": "NISSAN"
+    },
+    {
+      "brandId": 44,
+      "brandName": "PEUGEOT"
+    },
+    {
+      "brandId": 48,
+      "brandName": "RENAULT"
+    },
+    {
+      "brandId": 55,
+      "brandName": "SUZUKI"
+    },
+    {
+      "brandId": 56,
+      "brandName": "TOYOTA"
+    },
+    {
+      "brandId": 58,
+      "brandName": "VOLVO"
+    },
+    {
+      "brandId": 59,
+      "brandName": "VOLKSWAGEN"
+    },
+    {
       "brandId": 1,
-      "brandName": "a"
+      "brandName": "ACURA"
+    },
+    {
+      "brandId": 2,
+      "brandName": "AGRALE"
+    },
+    {
+      "brandId": 3,
+      "brandName": "ALFA ROMEO"
+    },
+    {
+      "brandId": 4,
+      "brandName": "AM GEN"
+    },
+    {
+      "brandId": 5,
+      "brandName": "ASIA MOTORS"
+    },
+    {
+      "brandId": 189,
+      "brandName": "ASTON MARTIN"
+    },
+    {
+      "brandId": 207,
+      "brandName": "BABY"
+    },
+    {
+      "brandId": 8,
+      "brandName": "BRM"
+    },
+    {
+      "brandId": 123,
+      "brandName": "BUGRE"
+    },
+    {
+      "brandId": 10,
+      "brandName": "CADILLAC"
+    },
+    {
+      "brandId": 11,
+      "brandName": "CBT JIPE"
+    },
+    {
+      "brandId": 136,
+      "brandName": "CHANA"
+    },
+    {
+      "brandId": 182,
+      "brandName": "CHANGAN"
+    },
+    {
+      "brandId": 161,
+      "brandName": "CHERY"
+    },
+    {
+      "brandId": 12,
+      "brandName": "CHRYSLER"
+    },
+    {
+      "brandId": 14,
+      "brandName": "CROSS LANDER"
+    },
+    {
+      "brandId": 15,
+      "brandName": "DAEWOO"
+    },
+    {
+      "brandId": 16,
+      "brandName": "DAIHATSU"
+    },
+    {
+      "brandId": 17,
+      "brandName": "DODGE"
+    },
+    {
+      "brandId": 147,
+      "brandName": "EFFA"
+    },
+    {
+      "brandId": 18,
+      "brandName": "ENGESA"
+    },
+    {
+      "brandId": 19,
+      "brandName": "ENVEMO"
+    },
+    {
+      "brandId": 20,
+      "brandName": "FERRARI"
+    },
+    {
+      "brandId": 149,
+      "brandName": "FIBRAVAN"
+    },
+    {
+      "brandId": 190,
+      "brandName": "FOTON"
+    },
+    {
+      "brandId": 170,
+      "brandName": "FYBER"
+    },
+    {
+      "brandId": 199,
+      "brandName": "GEELY"
+    },
+    {
+      "brandId": 153,
+      "brandName": "GREAT WALL"
+    },
+    {
+      "brandId": 24,
+      "brandName": "GURGEL"
+    },
+    {
+      "brandId": 152,
+      "brandName": "HAFEI"
+    },
+    {
+      "brandId": 27,
+      "brandName": "ISUZU"
+    },
+    {
+      "brandId": 208,
+      "brandName": "IVECO"
+    },
+    {
+      "brandId": 177,
+      "brandName": "JAC"
+    },
+    {
+      "brandId": 28,
+      "brandName": "JAGUAR"
+    },
+    {
+      "brandId": 29,
+      "brandName": "JEEP"
+    },
+    {
+      "brandId": 154,
+      "brandName": "JINBEI"
+    },
+    {
+      "brandId": 30,
+      "brandName": "JPX"
+    },
+    {
+      "brandId": 32,
+      "brandName": "LADA"
+    },
+    {
+      "brandId": 171,
+      "brandName": "LAMBORGHINI"
+    },
+    {
+      "brandId": 33,
+      "brandName": "LAND ROVER"
+    },
+    {
+      "brandId": 34,
+      "brandName": "LEXUS"
+    },
+    {
+      "brandId": 168,
+      "brandName": "LIFAN"
+    },
+    {
+      "brandId": 127,
+      "brandName": "LOBINI"
+    },
+    {
+      "brandId": 35,
+      "brandName": "LOTUS"
+    },
+    {
+      "brandId": 140,
+      "brandName": "MAHINDRA"
+    },
+    {
+      "brandId": 36,
+      "brandName": "MASERATI"
+    },
+    {
+      "brandId": 37,
+      "brandName": "MATRA"
+    },
+    {
+      "brandId": 38,
+      "brandName": "MAZDA"
+    },
+    {
+      "brandId": 211,
+      "brandName": "MCLAREN"
+    },
+    {
+      "brandId": 40,
+      "brandName": "MERCURY"
+    },
+    {
+      "brandId": 167,
+      "brandName": "MG"
+    },
+    {
+      "brandId": 156,
+      "brandName": "MINI"
+    },
+    {
+      "brandId": 42,
+      "brandName": "MIURA"
+    },
+    {
+      "brandId": 45,
+      "brandName": "PLYMOUTH"
+    },
+    {
+      "brandId": 46,
+      "brandName": "PONTIAC"
+    },
+    {
+      "brandId": 47,
+      "brandName": "PORSCHE"
+    },
+    {
+      "brandId": 185,
+      "brandName": "RAM"
+    },
+    {
+      "brandId": 186,
+      "brandName": "RELY"
+    },
+    {
+      "brandId": 195,
+      "brandName": "ROLLS-ROYCE"
+    },
+    {
+      "brandId": 49,
+      "brandName": "ROVER"
+    },
+    {
+      "brandId": 50,
+      "brandName": "SAAB"
+    },
+    {
+      "brandId": 51,
+      "brandName": "SATURN"
+    },
+    {
+      "brandId": 52,
+      "brandName": "SEAT"
+    },
+    {
+      "brandId": 183,
+      "brandName": "SHINERAY"
+    },
+    {
+      "brandId": 157,
+      "brandName": "SMART"
+    },
+    {
+      "brandId": 125,
+      "brandName": "SSANGYONG"
+    },
+    {
+      "brandId": 54,
+      "brandName": "SUBARU"
+    },
+    {
+      "brandId": 165,
+      "brandName": "TAC"
+    },
+    {
+      "brandId": 57,
+      "brandName": "TROLLER"
+    },
+    {
+      "brandId": 163,
+      "brandName": "WAKE"
+    },
+    {
+      "brandId": 120,
+      "brandName": "WALK"
     }
   ]
 }

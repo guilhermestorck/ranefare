@@ -2,6 +2,7 @@ package gateways
 
 import conf.Hosts
 import cucumber.api.DataTable
+import domains.stubby.StubbyRequest
 import domains.stubby.StubbyResponse
 import gherkin.deps.com.google.gson.Gson
 import gherkin.deps.com.google.gson.reflect.TypeToken
@@ -9,24 +10,20 @@ import khttp.responses.Response
 import org.json.JSONTokener
 import parsers.DataTableParser
 import java.rmi.UnexpectedException
-import java.util.*
 import java.util.regex.Pattern
-
 
 object StubbyGateway {
     private val gson = Gson()
     private val APIS = mapOf(
-        "obter marcas de carros" to "/carros/marcas.json",
-        "obter veículos de uma marca" to "/carros/veiculos/{brandId}.json",
-        "obter modelos de um veículo" to "/carros/veiculo/{brandId}/{vehicleId}.json",
-        "obter detalhes de um modelo" to "/carros/veiculo/{brandId}/{vehicleId}/{modelId}.json"
+        "obter marcas de carros" to "/{vehicleType}/marcas.json",
+        "obter veículos de uma marca" to "/{vehicleType}/veiculos/{brandId}.json",
+        "obter modelos de um veículo" to "/{vehicleType}/veiculo/{brandId}/{vehicleId}.json",
+        "obter detalhes de um modelo" to "/{vehicleType}/veiculo/{brandId}/{vehicleId}/{modelId}.json"
     )
 
-    fun create(apiName: String, dataTable: DataTable): Int {
-        val stubbyRequest =
-            DataTableParser.parseMockRequestDataTable(
-                APIS[apiName],
-                apiName, dataTable)
+    fun create(apiName: String, baseMockFolder: String, dataTable: DataTable): Int {
+        val stubbyRequest: StubbyRequest = DataTableParser.parseMockRequestDataTable(
+            APIS[apiName], baseMockFolder, apiName, dataTable)
 
         val response = khttp.request(
             method = "POST",
@@ -57,7 +54,7 @@ object StubbyGateway {
         ).text
         if (jsonResponse.isBlank()) return arrayListOf()
         else {
-            val listType = object : TypeToken<ArrayList<StubbyResponse>>() {}.type
+            val listType = object : TypeToken<List<StubbyResponse>>() {}.type
             return gson.fromJson(jsonResponse, listType)
         }
     }

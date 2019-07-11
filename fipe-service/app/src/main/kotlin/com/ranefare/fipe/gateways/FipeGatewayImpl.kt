@@ -21,11 +21,13 @@ class FipeGatewayImpl(
 ) : FipeGateway {
     override fun getBrands(vehicleType: VehicleType): List<VehicleBrand> {
         try {
-            val response = fipeClient.getBrands(FipeVehicleType.valueOf(vehicleType.name).label)
+            val fipeVehicleBrands = fipeClient.getBrands(
+                FipeVehicleType.valueOf(vehicleType.name).label
+            ).body() ?: throw FipeIntegrationException("Empty result")
 
-            val fipeVehicleBrands = response.body() ?: throw FipeIntegrationException("Empty result")
-
-            return fipeVehicleBrands.map { fipeVehicleBrand -> fipeVehicleBrandToVehicleBrandAssembler.assemble(fipeVehicleBrand, vehicleType) }
+            return fipeVehicleBrands.map { fipeVehicleBrand ->
+                fipeVehicleBrandToVehicleBrandAssembler.assemble(fipeVehicleBrand, vehicleType)
+            }
         } catch (e: Exception) {
             throw FipeIntegrationException(message = e.message, cause = e)
         }
