@@ -25,9 +25,9 @@ object StubbyGateway {
         )
     )
 
-    fun create(apiName: String, integrationName: String, dataTable: DataTable): Int {
-        val stubbyRequest: StubbyRequest = DataTableParser.parseMockRequestDataTable(
-            APIS[integrationName]?.get(apiName), integrationName, apiName, dataTable)
+    fun create(serviceName: String, integrationName: String, dataTable: DataTable): Int {
+        val stubbyRequest: StubbyRequest = DataTableParser.parseMockStubbyRequest(
+            APIS[integrationName]?.get(serviceName), integrationName, serviceName, dataTable)
 
         val response = khttp.request(
             method = "POST",

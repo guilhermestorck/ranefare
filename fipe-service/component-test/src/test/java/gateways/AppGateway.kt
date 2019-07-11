@@ -13,11 +13,11 @@ object AppGateway {
         "detalhes de um modelo" to "/fipe/brands/{brandId}/models/{modelId}/details"
     )
 
-    fun request(apiName: String, dataTable: DataTable): Response {
+    fun request(serviceName: String, dataTable: DataTable): Response {
         val requestDataTable =
             DataTableParser.parseAppRequestDataTable(
-                "${Hosts.APP.address}${APIS[apiName]}",
-                apiName, dataTable)
+                "${Hosts.APP.address}${APIS[serviceName]}",
+                serviceName, dataTable)
 
         return khttp.request(
             method = requestDataTable.method,

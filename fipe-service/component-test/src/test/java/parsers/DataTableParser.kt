@@ -1,6 +1,7 @@
 package parsers
 
 import cucumber.api.DataTable
+import domains.datatable.IntegrationMockTimes
 import domains.datatable.RequestDataTable
 import domains.datatable.ResponseDataTable
 import domains.stubby.StubbyRequest
@@ -20,11 +21,11 @@ object DataTableParser {
     private const val REQUEST = "request"
     private const val RESPONSE = "response"
 
-    fun parseAppRequestDataTable(baseUrl: String?, apiName: String, dataTable: DataTable): RequestDataTable {
+    fun parseAppRequestDataTable(baseUrl: String?, serviceName: String, dataTable: DataTable): RequestDataTable {
         val groupedData = getGroupedData(dataTable)
 
         val method = parseSingleValue(METHOD, groupedData).orEmpty()
-        val jsonBody = getJsonRequestBody("app/$apiName", groupedData)
+        val jsonBody = getJsonRequestBody("app/$serviceName", groupedData)
 
         if (method == "GET" && jsonBody != null)
             throw UnsupportedOperationException("A GET request can't have a body.")
@@ -38,23 +39,23 @@ object DataTableParser {
         )
     }
 
-    fun parseAppResponseDataTable(apiName: String, dataTable: DataTable): ResponseDataTable {
+    fun parseAppResponseDataTable(serviceName: String, dataTable: DataTable): ResponseDataTable {
         val groupedData = getGroupedData(dataTable)
 
         return ResponseDataTable(
             status = parseSingleValue(STATUS, groupedData)?.toInt(),
-            body = getStringResponseBody("app/$apiName", groupedData),
+            body = getStringResponseBody("app/$serviceName", groupedData),
             headers = parseMappedValues(HEADER, groupedData)
         )
     }
 
-    fun parseMockRequestDataTable(baseUrl: String?, baseMockFolder: String, apiName: String, dataTable: DataTable): StubbyRequest {
+    fun parseMockStubbyRequest(baseUrl: String?, integrationName: String, serviceName: String, dataTable: DataTable): StubbyRequest {
         val groupedData = getGroupedData(dataTable)
         val requestMap = parseMappedValues(groupedData[REQUEST] ?: listOf())[0]
         val response = parseMappedValues(groupedData[RESPONSE] ?: listOf())
 
         val method = requestMap[METHOD].orEmpty().trim()
-        val stringJsonBody = getStringRequestBody("mocks/$baseMockFolder/$apiName", requestMap[BODY].orEmpty().trim())
+        val stringJsonBody = getStringRequestBody("mocks/$integrationName/$serviceName", requestMap[BODY].orEmpty().trim())
 
         if (method == "GET" && stringJsonBody != null)
             throw UnsupportedOperationException("A GET request can't have a body.")
@@ -71,17 +72,31 @@ object DataTableParser {
             response = response.map { mapResponse ->
                 StubbyResponseBody(
                     headers = parseMappedValues(mapResponse[HEADER]),
-                    body = getStringResponseBody("mocks/$baseMockFolder/$apiName", mapResponse[BODY].orEmpty().trim()),
+                    body = getStringResponseBody("mocks/$integrationName/$serviceName", mapResponse[BODY].orEmpty().trim()),
                     status = mapResponse[STATUS]?.trim()?.toInt()
                 )
             }
         )
     }
 
-    private fun getGroupedData(dataTable: DataTable): Map<String, List<MutableList<String>>> =
+    fun parseIntegrationMockTimes(dataTable: DataTable): List<IntegrationMockTimes> =
+        dataTable.asLists(String::class.java)
+            .drop(1)
+            .map { row ->
+                if (row.size != 3) throw UnsupportedOperationException(
+                    "Not valid IntegrationMockTimesDataTable row: $row. " +
+                        "An IntegrationMockTimesDataTable row must be in the format \"| integrationName | serviceName | times |\"")
+                IntegrationMockTimes(
+                    integrationName = row[0],
+                    serviceName = row[1],
+                    times = row[2].toInt()
+                )
+            }.toList()
+
+    private fun getGroupedData(dataTable: DataTable): Map<String, List<List<String>>> =
         dataTable.asLists(String::class.java).groupBy { it[0] }
 
-    private fun getUrl(baseUrl: String?, requestData: Map<String, List<MutableList<String>>>): String =
+    private fun getUrl(baseUrl: String?, requestData: Map<String, List<List<String>>>): String =
         getUrlWithPathParams(baseUrl, getPathParams(requestData))
 
     private fun getUrlWithPathParams(baseUrl: String?, pathParams: Map<String, String>): String =
@@ -89,17 +104,17 @@ object DataTableParser {
             url.replace("{${pathParam.key}}", pathParam.value)
         }
 
-    private fun getPathParams(requestData: Map<String, List<MutableList<String>>>): Map<String, String> =
+    private fun getPathParams(requestData: Map<String, List<List<String>>>): Map<String, String> =
         parseMappedValues(PATH_PARAM, requestData) ?: mapOf()
 
-    private fun getJsonRequestBody(resourcePath: String, requestData: Map<String, List<MutableList<String>>>): Any? =
+    private fun getJsonRequestBody(resourcePath: String, requestData: Map<String, List<List<String>>>): Any? =
         getJsonRequestBody(resourcePath, parseSingleValue(BODY, requestData).orEmpty())
 
     private fun getJsonRequestBody(resourcePath: String, bodyLabel: String): Any? =
         if (bodyLabel.isBlank()) null
         else JSONTokener(FilesGateway.getRequestString(resourcePath, bodyLabel)).nextValue()
 
-    private fun getStringResponseBody(resourcePath: String, requestData: Map<String, List<MutableList<String>>>): String? =
+    private fun getStringResponseBody(resourcePath: String, requestData: Map<String, List<List<String>>>): String? =
         getStringResponseBody(resourcePath, parseSingleValue(BODY, requestData).orEmpty())
 
     private fun getStringRequestBody(resourcePath: String, bodyLabel: String): String? =
@@ -116,11 +131,11 @@ object DataTableParser {
             FilesGateway.getResponseString(resourcePath, bodyLabel)
         }
 
-    private fun parseSingleValue(key: String, requestData: Map<String, List<MutableList<String>>>): String? =
+    private fun parseSingleValue(key: String, requestData: Map<String, List<List<String>>>): String? =
         requestData[key]?.get(0)?.get(1)?.trim()
 
     private fun parseMappedValues(
-        key: String, requestData: Map<String, List<MutableList<String>>>
+        key: String, requestData: Map<String, List<List<String>>>
     ): Map<String, String>? =
         requestData[key]?.map {
             val parts = it[1].split(":")

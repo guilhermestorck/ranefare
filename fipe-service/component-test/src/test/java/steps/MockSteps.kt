@@ -3,10 +3,13 @@ package steps
 import cucumber.api.DataTable
 import cucumber.api.java8.Pt
 import gateways.StubbyGateway
+import org.junit.Assert.assertEquals
+import org.junit.Assert.fail
+import parsers.DataTableParser
 
 class MockSteps : Pt {
 
-    private val mocks = mutableMapOf<String, Int>()
+    private val mocks = mutableMapOf<String, MutableMap<String, Int>>()
 
     init {
 
@@ -14,10 +17,58 @@ class MockSteps : Pt {
             mocks.clear()
         }
 
-        Dado("um mock no serviço \"([^\"]*)\" da integração \"([^\"]*)\" com requisição e resposta com os atributos:$")
-        { apiName: String, integrationName: String, dataTable: DataTable ->
-            mocks[apiName] = StubbyGateway.create(apiName, integrationName, dataTable)
+        Dado("^um mock no serviço \"([^\"]*)\" da integração \"([^\"]*)\" com requisição e resposta com os atributos:$")
+        { serviceName: String, integrationName: String, dataTable: DataTable ->
+            if (mocks[integrationName] == null) mocks[integrationName] = mutableMapOf<String, Int>()
+            mocks[integrationName]!![serviceName] = StubbyGateway.create(serviceName, integrationName, dataTable)
         }
 
+        E("^apenas os mocks de integrações abaixo foram chamados:$")
+        { dataTable: DataTable ->
+            val timesList = DataTableParser.parseIntegrationMockTimes(dataTable)
+            val stubbyHits = StubbyGateway.getAllServices().map { response ->
+                response.id to response.hits
+            }.toMap()
+
+            timesList.forEach { times ->
+                val stubbyId = mocks[times.integrationName]?.get(times.serviceName)
+                if (stubbyId == null) {
+                    fail("There isn't any stubby for " +
+                        "\"${times.serviceName}\" service of " +
+                        "\"${times.integrationName}\" integration.")
+                }
+                assertEquals(
+                    "The stubby hits of " +
+                        "\"${times.serviceName}\" service of " +
+                        "\"${times.integrationName}\" integration is ${stubbyHits[stubbyId]}, " +
+                        "but should be ${times.times}.",
+                    stubbyHits[stubbyId],
+                    times.times)
+            }
+
+            stubbyHits.forEach { hitsEntry ->
+                val timesRowsMatched = timesList.filter { times ->
+                    val stubbyId = mocks[times.integrationName]?.get(times.serviceName) ?: -1
+                    stubbyId == hitsEntry.key
+                }
+                if (timesRowsMatched.isEmpty()) {
+                    fail("There is a stubby with id " +
+                        "${hitsEntry.key} that was hit ${hitsEntry.value} times, " +
+                        "but there isn't a table test for its.")
+                }
+
+                val timesRowMatched = timesRowsMatched.first()
+                if (timesRowsMatched.size != 1)
+                    fail("There are ${timesRowsMatched.size} assert rows for " +
+                        "\"${timesRowMatched.serviceName}\" service of " +
+                        "\"${timesRowMatched.integrationName}\" integration.")
+
+                assertEquals(
+                    "There is a stubby with id " +
+                        "${hitsEntry.key} that was hit ${hitsEntry.value} times, " +
+                        "but the times in table test is ${timesRowMatched.times}.", hitsEntry.value, timesRowMatched.times)
+            }
+        }
     }
+
 }
