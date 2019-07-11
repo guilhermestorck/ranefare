@@ -14,16 +14,20 @@ import java.util.regex.Pattern
 
 object StubbyGateway {
     private val gson = Gson()
+
     private val APIS = mapOf(
-        "obter marcas de carros" to "/{vehicleType}/marcas.json",
-        "obter veículos de uma marca" to "/{vehicleType}/veiculos/{brandId}.json",
-        "obter modelos de um veículo" to "/{vehicleType}/veiculo/{brandId}/{vehicleId}.json",
-        "obter detalhes de um modelo" to "/{vehicleType}/veiculo/{brandId}/{vehicleId}/{modelId}.json"
+        "fipe" to mapOf(
+            "obter marcas de carros" to "/{vehicleType}/marcas.json",
+            "obter veículos de uma marca" to "/{vehicleType}/veiculos/{brandId}.json",
+            "obter modelos de um veículo" to "/{vehicleType}/veiculo/{brandId}/{vehicleId}.json",
+            "obter detalhes de um modelo" to "/{vehicleType}/veiculo/{brandId}/{vehicleId}/{modelId}.json",
+            "obter marcas de carros" to "/{vehicleType}/marcas.json"
+        )
     )
 
-    fun create(apiName: String, baseMockFolder: String, dataTable: DataTable): Int {
+    fun create(apiName: String, integrationName: String, dataTable: DataTable): Int {
         val stubbyRequest: StubbyRequest = DataTableParser.parseMockRequestDataTable(
-            APIS[apiName], baseMockFolder, apiName, dataTable)
+            APIS[integrationName]?.get(apiName), integrationName, apiName, dataTable)
 
         val response = khttp.request(
             method = "POST",

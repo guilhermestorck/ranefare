@@ -88,7 +88,7 @@ class FipeGatewayImplSpec : Spek({
                 fail("expected an exception")
             } catch (e: FipeIntegrationException) {
                 with(e) {
-                    assertThat(message, equalTo("Empty result"))
+                    assertThat(message, equalTo("Empty result."))
                     assertThat(cause, instanceOf(FipeIntegrationException::class.java))
                 }
             }
@@ -161,7 +161,7 @@ class FipeGatewayImplSpec : Spek({
                 fail("expected an exception")
             } catch (e: FipeIntegrationException) {
                 with(e) {
-                    assertThat(message, equalTo("Empty result"))
+                    assertThat(message, equalTo("Empty result."))
                     assertThat(cause, instanceOf(FipeIntegrationException::class.java))
                 }
             }
@@ -243,7 +243,7 @@ class FipeGatewayImplSpec : Spek({
                 fail("expected an exception")
             } catch (e: FipeIntegrationException) {
                 with(e) {
-                    assertThat(message, equalTo("Empty result"))
+                    assertThat(message, equalTo("Empty result."))
                     assertThat(cause, instanceOf(FipeIntegrationException::class.java))
                 }
             }
@@ -327,7 +327,7 @@ class FipeGatewayImplSpec : Spek({
                 fail("expected an exception")
             } catch (e: FipeIntegrationException) {
                 with(e) {
-                    assertThat(message, equalTo("Empty result"))
+                    assertThat(message, equalTo("Empty result."))
                     assertThat(cause, instanceOf(FipeIntegrationException::class.java))
                 }
             }

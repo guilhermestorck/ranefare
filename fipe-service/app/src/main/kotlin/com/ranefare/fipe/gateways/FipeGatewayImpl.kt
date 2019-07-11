@@ -23,7 +23,7 @@ class FipeGatewayImpl(
         try {
             val fipeVehicleBrands = fipeClient.getBrands(
                 FipeVehicleType.valueOf(vehicleType.name).label
-            ).body() ?: throw FipeIntegrationException("Empty result")
+            ).body() ?: throw FipeIntegrationException("Empty result.")
 
             return fipeVehicleBrands.map { fipeVehicleBrand ->
                 fipeVehicleBrandToVehicleBrandAssembler.assemble(fipeVehicleBrand, vehicleType)
@@ -37,7 +37,7 @@ class FipeGatewayImpl(
         try {
             val fipeVehicles = fipeClient.getVehicles(
                 FipeVehicleType.valueOf(vehicleBrand.vehicleType.name).label,
-                vehicleBrand.id).body() ?: throw FipeIntegrationException("Empty result")
+                vehicleBrand.id).body() ?: throw FipeIntegrationException("Empty result.")
 
             return fipeVehicles.map { fipeVehicle -> fipeVehicleToVehicleAssembler.assemble(fipeVehicle, vehicleBrand) }
         } catch (e: Exception) {
@@ -50,7 +50,7 @@ class FipeGatewayImpl(
             val fipeVehicleModels = fipeClient.getVehicleModels(
                 FipeVehicleType.valueOf(vehicle.brand.vehicleType.name).label,
                 vehicle.brand.id,
-                vehicle.id).body() ?: throw FipeIntegrationException("Empty result")
+                vehicle.id).body() ?: throw FipeIntegrationException("Empty result.")
 
             return fipeVehicleModels.map { fipeVehicleModel -> fipeVehicleModelToVehicleModelAssembler.assemble(fipeVehicleModel, vehicle) }
         } catch (e: Exception) {
@@ -64,7 +64,7 @@ class FipeGatewayImpl(
                 FipeVehicleType.valueOf(vehicleModel.vehicle.brand.vehicleType.name).label,
                 vehicleModel.vehicle.brand.id,
                 vehicleModel.vehicle.id,
-                vehicleModel.id).body() ?: throw FipeIntegrationException("Empty result")
+                vehicleModel.id).body() ?: throw FipeIntegrationException("Empty result.")
 
             return fipeVehicleDetailsToVehicleDetailsAssembler.assemble(fipeVehicleDetails, vehicleModel)
         } catch (e: Exception) {
