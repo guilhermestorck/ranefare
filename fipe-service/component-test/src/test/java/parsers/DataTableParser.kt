@@ -87,8 +87,8 @@ object DataTableParser {
                     "Not valid IntegrationMockTimesDataTable row: $row. " +
                         "An IntegrationMockTimesDataTable row must be in the format \"| integrationName | serviceName | times |\"")
                 IntegrationMockTimes(
-                    integrationName = row[0],
-                    serviceName = row[1],
+                    integrationName = row[0].replace(' ', '-'),
+                    serviceName = row[1].replace(' ', '-'),
                     times = row[2].toInt()
                 )
             }.toList()

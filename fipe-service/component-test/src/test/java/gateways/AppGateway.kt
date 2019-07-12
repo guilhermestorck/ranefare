@@ -1,22 +1,16 @@
 package gateways
 
-import conf.Hosts
+import conf.Config
 import cucumber.api.DataTable
 import khttp.responses.Response
 import parsers.DataTableParser
 
 object AppGateway {
 
-    private val APIS = mapOf(
-        "marcas por tipo de veículo" to "/fipe/brands",
-        "modelos de uma marca" to "/fipe/brands/{brandId}/models",
-        "detalhes de um modelo" to "/fipe/brands/{brandId}/models/{modelId}/details"
-    )
-
     fun request(serviceName: String, dataTable: DataTable): Response {
         val requestDataTable =
             DataTableParser.parseAppRequestDataTable(
-                "${Hosts.APP.address}${APIS[serviceName]}",
+                Config.MOCKED_API_NAMES.getHostUrl("app", serviceName),
                 serviceName, dataTable)
 
         return khttp.request(
