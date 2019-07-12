@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuotationOption } from '../util/domains/quotation-option.domain';
 
 @Component({
   selector: 'home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  quotationPlans: QuotationOption[] = null;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  settingPlan(event) {
+    this.quotationPlans = event;
   }
 
 }

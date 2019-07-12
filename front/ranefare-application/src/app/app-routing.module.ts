@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path:'plans',
-    loadChildren:'./plans/plans.module#PlansModule'
+    loadChildren:'./plans-page-container/plans-page-container.module#PlansPageContainerModule'
   }
 ];
 

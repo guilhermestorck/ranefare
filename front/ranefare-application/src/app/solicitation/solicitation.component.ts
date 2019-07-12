@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FipeService } from '../util/service/fipe.service';
-import { PlanRequest } from '../util/domains/requests/plans.requests';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Brand } from '../util/domains/brand.domain';
-import { ModelResponse } from '../util/domains/responses/model.response';
 import { Detail } from '../util/domains/details.domain';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { QuotationOption } from '../util/domains/quotation-option.domain';
+import { PlanRequest } from '../util/domains/requests/plans.requests';
+import { ModelResponse } from '../util/domains/responses/model.response';
+import { FipeService } from '../util/service/fipe.service';
 import { ValidationCPF } from '../util/validations/validation-cpf';
 
 @Component({
@@ -15,15 +15,16 @@ import { ValidationCPF } from '../util/validations/validation-cpf';
 })
 export class SolicitationComponent implements OnInit {
 
-  planRequest: PlanRequest = new PlanRequest();
-  modelResponse: ModelResponse = new ModelResponse();
-  brands: Brand[] = [];
-  details: Detail = new Detail();
-
   cpfInvalid: Boolean;
 
-  constructor(private fipeService: FipeService,
-    private formBuilder: FormBuilder) { }
+  planRequest: PlanRequest = new PlanRequest();
+  modelResponse: ModelResponse = new ModelResponse();
+  details: Detail = new Detail();
+
+  brands: Brand[] = [];
+  quotationPlans: QuotationOption[] = null;
+
+  constructor(private fipeService: FipeService) { }
 
   ngOnInit() {
     this.getBrands();
@@ -54,6 +55,14 @@ export class SolicitationComponent implements OnInit {
     } else {
       this.cpfInvalid = false;
     }
+  }
+
+  continue() {
+    // TODO chamar serviço de quotation para requisitar os planos
+    this.quotationPlans = [];
+    this.quotationPlans.push(new QuotationOption("Básico", 129.99, new Map([["Roubo, Furto e Incêndio", true], ["Alagamento", true], ["Colisão - Só perda Total", false], ["Colisão - Qualquer batida", false]])));
+    this.quotationPlans.push(new QuotationOption("Mediano", 169.99, new Map([["Roubo, Furto e Incêndio", true], ["Alagamento", true], ["Colisão - Só perda Total", true], ["Colisão - Qualquer batida", false]])));
+    this.quotationPlans.push(new QuotationOption("Plus", 199.99, new Map([["Roubo, Furto e Incêndio", true], ["Alagamento", true], ["Colisão - Só perda Total", true], ["Colisão - Qualquer batida", true]])));
   }
 
 }

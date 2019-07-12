@@ -1,0 +1,17 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">
+    <font style="vertical-align: inherit;" class="title-color">Preços</font>
+  </h1>
+  <p class="lead justify-content-md-center">
+    <font style="vertical-align: inherit;">
+      <font style="vertical-align: inherit;">A medida certa é você quem escolhe. Escolha as coberturas iniciais, e continue personalizando seu seguro ;) </font>
+    </font>
+  </p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let plan of quotationPlans">
+      <plan-panel [quotationPlan]="plan"></plan-panel>
+    </div>
+  </div>
+</div>

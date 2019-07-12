@@ -1,0 +1,7 @@
+.plan-header {
+    color: #800080;
+    background-color: #D8BFD8;
+}
+.plan-card, .plan-header {
+    border-color: #800080;
+}

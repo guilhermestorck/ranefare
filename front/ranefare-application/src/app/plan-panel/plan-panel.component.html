@@ -1,0 +1,33 @@
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 shadow-sm plan-card">
+    <div class="card-header plan-header">
+      <h4 class="my-0 font-weight-normal">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">{{quotationPlan.name}}</font>
+        </font>
+      </h4>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title pricing-card-title">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">R$ {{quotationPlan.value}} </font>
+        </font>
+        <small class="text-muted">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">/ mês</font>
+          </font>
+        </small>
+      </h1>
+      <div *ngFor="let item of coverageItemsKeys">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">item</font>
+        </font>
+      </div>
+      <button type="button" class="btn btn-info">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Contratar</font>
+        </font>
+      </button>
+    </div>
+  </div>
+</div>

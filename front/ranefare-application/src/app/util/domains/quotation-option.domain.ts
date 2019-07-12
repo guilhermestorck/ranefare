@@ -1,11 +1,12 @@
 export class QuotationOption {
+    id: String;
     name: String;
-    price: number;
+    value: number;
     coverageItems: Map<String, Boolean>;
 
-    constructor(name?: String, price?: number, coverageItems?: Map<String, Boolean>) {
+    constructor(name?: String, value?: number, coverageItems?: Map<String, Boolean>) {
         this.name = name;
-        this.price = price;
+        this.value = value;
         this.coverageItems = coverageItems;
     }
 }
