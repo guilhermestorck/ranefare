@@ -1,0 +1,2037 @@
+{
+  "brandId": 21,
+  "models": [
+    {
+      "modelId": "437",
+      "modelName": "147 C/ CL"
+    },
+    {
+      "modelId": "438",
+      "modelName": "147 Furgão (todos)"
+    },
+    {
+      "modelId": "439",
+      "modelName": "147 Pick-Up (todas)"
+    },
+    {
+      "modelId": "7097",
+      "modelName": "500 ABARTH MULTIAIR 1.4 TB 16V 3p"
+    },
+    {
+      "modelId": "6885",
+      "modelName": "500 Cabrio Dualogic Flex 1.4 8V"
+    },
+    {
+      "modelId": "6886",
+      "modelName": "500 Cabrio Flex 1.4 8V Mec."
+    },
+    {
+      "modelId": "6262",
+      "modelName": "500 Cabrio/500 Coupe Gucci/Flex 1.4 Aut."
+    },
+    {
+      "modelId": "5613",
+      "modelName": "500 Cult 1.4 Flex 8V EVO Dualogic"
+    },
+    {
+      "modelId": "5614",
+      "modelName": "500 Cult 1.4 Flex 8V EVO Mec."
+    },
+    {
+      "modelId": "5059",
+      "modelName": "500 LOUNGE 1.4 16V 100cv  Mec."
+    },
+    {
+      "modelId": "5060",
+      "modelName": "500 LOUNGE 1.4 16V 100cv Dualogic"
+    },
+    {
+      "modelId": "5615",
+      "modelName": "500 Lounge Air 1.4/ 1.4 Flex 16V Aut."
+    },
+    {
+      "modelId": "5061",
+      "modelName": "500 SPORT 1.4 16V 100cv  Dualogic"
+    },
+    {
+      "modelId": "5062",
+      "modelName": "500 SPORT 1.4 16V 100cv Mec."
+    },
+    {
+      "modelId": "5616",
+      "modelName": "500 Sport Air 1.4 16V/1.4 Flex 16V Aut."
+    },
+    {
+      "modelId": "5617",
+      "modelName": "500 Sport Air 1.4 16V/1.4 Flex Mec."
+    },
+    {
+      "modelId": "8315",
+      "modelName": "ARGO 1.0 6V Flex."
+    },
+    {
+      "modelId": "7965",
+      "modelName": "ARGO DRIVE 1.0 6V Flex"
+    },
+    {
+      "modelId": "7966",
+      "modelName": "ARGO DRIVE 1.3 8V Flex"
+    },
+    {
+      "modelId": "7967",
+      "modelName": "ARGO DRIVE GSR 1.3 8V Flex"
+    },
+    {
+      "modelId": "7968",
+      "modelName": "ARGO HGT 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "7969",
+      "modelName": "ARGO HGT 1.8 16V Flex Mec."
+    },
+    {
+      "modelId": "7971",
+      "modelName": "ARGO PRECISION 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "7970",
+      "modelName": "ARGO PRECISION 1.8 16V Flex Mec."
+    },
+    {
+      "modelId": "8690",
+      "modelName": "ARGO TREKKING 1.3 8V Flex"
+    },
+    {
+      "modelId": "440",
+      "modelName": "Brava ELX  1.6 16V 4p"
+    },
+    {
+      "modelId": "441",
+      "modelName": "Brava HGT 1.8 mpi 16V  4p"
+    },
+    {
+      "modelId": "442",
+      "modelName": "Brava SX 1.6 16V 4p"
+    },
+    {
+      "modelId": "5446",
+      "modelName": "Bravo ABSOLUTE 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "5447",
+      "modelName": "Bravo ABSOLUTE Dualogic 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "7132",
+      "modelName": "Bravo BlackMotion 1.8 Dualogic Flex 5p"
+    },
+    {
+      "modelId": "7133",
+      "modelName": "Bravo BlackMotion 1.8 Flex 16v 5p"
+    },
+    {
+      "modelId": "5448",
+      "modelName": "Bravo ESSENCE 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "5449",
+      "modelName": "Bravo ESSENCE Dualogic 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "6051",
+      "modelName": "Bravo SPORTING 1.8 Dualogic Flex 16V 5p"
+    },
+    {
+      "modelId": "6052",
+      "modelName": "Bravo SPORTING 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "443",
+      "modelName": "Bravo SX 1.6"
+    },
+    {
+      "modelId": "5591",
+      "modelName": "Bravo T-JET 1.4 16V Turbo 5p"
+    },
+    {
+      "modelId": "6515",
+      "modelName": "Bravo WOLVERINE 1.8 Dualogic Flex 16V 5p"
+    },
+    {
+      "modelId": "6516",
+      "modelName": "Bravo WOLVERINE 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "444",
+      "modelName": "Cinquecento 0.7"
+    },
+    {
+      "modelId": "445",
+      "modelName": "Coupe 16V"
+    },
+    {
+      "modelId": "8199",
+      "modelName": "CRONOS 1.3 8V Flex"
+    },
+    {
+      "modelId": "8200",
+      "modelName": "CRONOS DRIVE 1.3 8V Flex"
+    },
+    {
+      "modelId": "8518",
+      "modelName": "CRONOS DRIVE 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "8201",
+      "modelName": "CRONOS DRIVE GSR 1.3 8V Flex"
+    },
+    {
+      "modelId": "8202",
+      "modelName": "CRONOS PRECISION 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "8203",
+      "modelName": "CRONOS PRECISION 1.8 16V Flex Mec."
+    },
+    {
+      "modelId": "5104",
+      "modelName": "Doblo  1.4 mpi Fire Flex  8V 4p"
+    },
+    {
+      "modelId": "5105",
+      "modelName": "Doblo  Cargo 1.4 mpi Fire Flex 8V 3p"
+    },
+    {
+      "modelId": "6053",
+      "modelName": "Doblo Adv. XINGU 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "6054",
+      "modelName": "Doblo Adv. XINGU LOCKER 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "7503",
+      "modelName": "Doblo Adv.Ext./Adv.Ext.Loc. 1.8 16V Flex"
+    },
+    {
+      "modelId": "3933",
+      "modelName": "Doblo Adv/Adv TRYON/LOCKER 1.8 Flex"
+    },
+    {
+      "modelId": "446",
+      "modelName": "Doblo Adventure/ Adv.ER 1.8 mpi 8V 103cv"
+    },
+    {
+      "modelId": "5535",
+      "modelName": "Doblo ATTRACTIVE 1.4 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "447",
+      "modelName": "Doblo Cargo 1.3 Fire 16V 4/5p"
+    },
+    {
+      "modelId": "448",
+      "modelName": "Doblo Cargo 1.6 16V 4/5p"
+    },
+    {
+      "modelId": "449",
+      "modelName": "Doblo Cargo 1.8 mpi 8V 103cv"
+    },
+    {
+      "modelId": "3934",
+      "modelName": "Doblo Cargo 1.8 mpi Fire Flex 8V/16V 4p"
+    },
+    {
+      "modelId": "5106",
+      "modelName": "Doblo ELX 1.4 mpi Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "450",
+      "modelName": "Doblo ELX 1.6 16V 4/5p"
+    },
+    {
+      "modelId": "451",
+      "modelName": "Doblo ELX 1.8 mpi 8V 103cv"
+    },
+    {
+      "modelId": "3935",
+      "modelName": "Doblo ELX 1.8 mpi 8V Flex"
+    },
+    {
+      "modelId": "5536",
+      "modelName": "Doblo ESSENCE 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "452",
+      "modelName": "Doblo EX 1.3 Fire 16V 80cv 4/5p"
+    },
+    {
+      "modelId": "4097",
+      "modelName": "Doblo HLX 1.8 mpi Flex 5p"
+    },
+    {
+      "modelId": "453",
+      "modelName": "Ducato Cargo 2.8 Curto/Longo TB Diesel"
+    },
+    {
+      "modelId": "8204",
+      "modelName": "Ducato Cargo Curto 2.3 16V Diesel"
+    },
+    {
+      "modelId": "5022",
+      "modelName": "Ducato Cargo Curto 2.3 ME Diesel"
+    },
+    {
+      "modelId": "5023",
+      "modelName": "Ducato Cargo Longo 2.3 ME Diesel"
+    },
+    {
+      "modelId": "8205",
+      "modelName": "Ducato Cargo Médio 2.3 16V Diesel"
+    },
+    {
+      "modelId": "8206",
+      "modelName": "Ducato Chassi 2.3 16V Diesel"
+    },
+    {
+      "modelId": "5024",
+      "modelName": "Ducato Combinato 2.3 ME Diesel"
+    },
+    {
+      "modelId": "454",
+      "modelName": "Ducato Combinato 2.8 Diesel"
+    },
+    {
+      "modelId": "455",
+      "modelName": "Ducato Combinato 2.8 Turbo Diesel"
+    },
+    {
+      "modelId": "8395",
+      "modelName": "Ducato Executivo 2.3 16V Diesel"
+    },
+    {
+      "modelId": "456",
+      "modelName": "Ducato Furgão Maxi 2.8 Diesel"
+    },
+    {
+      "modelId": "5025",
+      "modelName": "Ducato Maxi. Curta 2.3 T.Alto ME Diesel"
+    },
+    {
+      "modelId": "5026",
+      "modelName": "Ducato Maxi. Long. 2.3 T.Alto ME Diesel"
+    },
+    {
+      "modelId": "8207",
+      "modelName": "Ducato MaxiCargo 2.3 16V Diesel"
+    },
+    {
+      "modelId": "457",
+      "modelName": "Ducato MaxiCargo/Furgão Maxi 2.8 TB Dies"
+    },
+    {
+      "modelId": "8208",
+      "modelName": "Ducato MaxiMulti 2.3 16V Diesel"
+    },
+    {
+      "modelId": "8396",
+      "modelName": "Ducato Minibus 2.3 16V Diesel"
+    },
+    {
+      "modelId": "5027",
+      "modelName": "Ducato Minibus 2.3 ME Diesel"
+    },
+    {
+      "modelId": "5028",
+      "modelName": "Ducato Minibus 2.3 T.Alto ME Diesel"
+    },
+    {
+      "modelId": "458",
+      "modelName": "Ducato Minibus 2.8 Diesel"
+    },
+    {
+      "modelId": "459",
+      "modelName": "Ducato Minibus 2.8 Turbo Diesel"
+    },
+    {
+      "modelId": "8397",
+      "modelName": "Ducato Minibus Comfort 2.3 16v Diesel"
+    },
+    {
+      "modelId": "460",
+      "modelName": "Ducato Mult/ Vetrato 2.8 T.Alto TB Dies."
+    },
+    {
+      "modelId": "461",
+      "modelName": "Ducato Mult/ Vetrato 2.8 T.Baixo TB Dies"
+    },
+    {
+      "modelId": "8209",
+      "modelName": "Ducato Multi 2.3 16V Diesel"
+    },
+    {
+      "modelId": "5029",
+      "modelName": "Ducato Multi Long. 2.3 T.Alto ME Diesel"
+    },
+    {
+      "modelId": "462",
+      "modelName": "Ducato Van 2.5  Diesel"
+    },
+    {
+      "modelId": "8398",
+      "modelName": "Ducato Vip Bus 2.3 16V Diesel"
+    },
+    {
+      "modelId": "463",
+      "modelName": "Ducato-10 Furgão 2.5 Diesel"
+    },
+    {
+      "modelId": "464",
+      "modelName": "Ducato-15 2.8 Furgão TB Diesel"
+    },
+    {
+      "modelId": "465",
+      "modelName": "Ducato-15 Furgão 2.8 Diesel"
+    },
+    {
+      "modelId": "466",
+      "modelName": "Ducato-8 Furgão 2.5 Diesel"
+    },
+    {
+      "modelId": "467",
+      "modelName": "Duna 1.6ie"
+    },
+    {
+      "modelId": "468",
+      "modelName": "Elba 1.6i.e/Top/CSL/ 1.6i.e/1.5 2p e 4p"
+    },
+    {
+      "modelId": "469",
+      "modelName": "Elba CS 1.6 / 1.5 /1.3"
+    },
+    {
+      "modelId": "470",
+      "modelName": "Elba S 1.6/ 1.5ie / 1.5 / 1.3"
+    },
+    {
+      "modelId": "471",
+      "modelName": "Elba Weekend 1.5 i.e. 2p e 4p"
+    },
+    {
+      "modelId": "473",
+      "modelName": "Fiorino Furg.1.5/1.3/1.3 Fire/1.3 F.Flex"
+    },
+    {
+      "modelId": "472",
+      "modelName": "Fiorino Furgão 1.0"
+    },
+    {
+      "modelId": "474",
+      "modelName": "Fiorino Furgão 1.5 mpi / i.e."
+    },
+    {
+      "modelId": "6662",
+      "modelName": "Fiorino Furgão Celeb. EVO 1.4 Flex 8V 2p"
+    },
+    {
+      "modelId": "6663",
+      "modelName": "Fiorino Furgão EVO 1.4 Flex 8V 2p"
+    },
+    {
+      "modelId": "7751",
+      "modelName": "Fiorino Furgão Work. HARD 1.4 Flex 8V 2p"
+    },
+    {
+      "modelId": "475",
+      "modelName": "Fiorino Pick-Up 1.0"
+    },
+    {
+      "modelId": "476",
+      "modelName": "Fiorino Pick-Up 1.5 i.e./1.3/1.5/HD"
+    },
+    {
+      "modelId": "477",
+      "modelName": "Fiorino Pick-Up LX (todas)"
+    },
+    {
+      "modelId": "478",
+      "modelName": "Fiorino Pick-Up Trekking 1.5 mpi / i.e."
+    },
+    {
+      "modelId": "479",
+      "modelName": "Fiorino Pick-Up Working 1.5 mpi / i.e."
+    },
+    {
+      "modelId": "5618",
+      "modelName": "FREEMONT EMOT./PRECISION 2.4 16V 5p Aut."
+    },
+    {
+      "modelId": "5925",
+      "modelName": "Grand Siena ATTRAC. 1.4 EVO F.Flex 8V"
+    },
+    {
+      "modelId": "7824",
+      "modelName": "Grand Siena ATTRACTIVE 1.0 Flex 8V 4p"
+    },
+    {
+      "modelId": "6955",
+      "modelName": "Grand Siena ESSEN. ITALIA Dual. 1.6 Flex"
+    },
+    {
+      "modelId": "6488",
+      "modelName": "Grand Siena ESSEN.SUBLIME 1.6 Flex"
+    },
+    {
+      "modelId": "6489",
+      "modelName": "Grand Siena ESSEN.SUBLIME Dual. 1.6 Flex"
+    },
+    {
+      "modelId": "5926",
+      "modelName": "Grand Siena ESSENCE 1.6 Flex 16V"
+    },
+    {
+      "modelId": "5927",
+      "modelName": "Grand Siena ESSENCE Dual. 1.6 Flex 16V"
+    },
+    {
+      "modelId": "6956",
+      "modelName": "Grand Siena ESSENCE ITALIA 1.6 Flex 16V"
+    },
+    {
+      "modelId": "5928",
+      "modelName": "Grand Siena TETRAFUEL 1.4 Evo F. Flex 8V"
+    },
+    {
+      "modelId": "7504",
+      "modelName": "Idea A.Ext./A..Ext.Loc.Dual. 1.8 Flex 5p"
+    },
+    {
+      "modelId": "4966",
+      "modelName": "Idea Adv./ Adv.LOCK.Dualogic 1.8 Flex 5p"
+    },
+    {
+      "modelId": "7505",
+      "modelName": "Idea Adv.Ext./Adv.Ext. Loc. 1.8 Flex 5p"
+    },
+    {
+      "modelId": "4160",
+      "modelName": "Idea Advent./ Adv.LOCKER 1.8 mpi Flex 5p"
+    },
+    {
+      "modelId": "5340",
+      "modelName": "Idea ATTRACTIVE 1.4 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "480",
+      "modelName": "Idea ELX 1.4 mpi Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "4962",
+      "modelName": "Idea ELX 1.8 mpi Flex 8V 5p"
+    },
+    {
+      "modelId": "5341",
+      "modelName": "Idea ESSENCE 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "5342",
+      "modelName": "Idea ESSENCE Dualogic 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "6711",
+      "modelName": "Idea ESSENCE SUBLIME 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "6712",
+      "modelName": "Idea ESSENCE SUBLIME Dual.1.6 Flex16V 5p"
+    },
+    {
+      "modelId": "481",
+      "modelName": "Idea HLX 1.8 mpi Flex 8V 5p"
+    },
+    {
+      "modelId": "5343",
+      "modelName": "Idea SPORTING 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "5344",
+      "modelName": "Idea SPORTING Dualogic 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "4748",
+      "modelName": "LINEA 1.9/ HLX 1.9/ 1.8 Flex 16V 4p"
+    },
+    {
+      "modelId": "4750",
+      "modelName": "LINEA 1.9/ HLX 1.9/1.8 Flex  Dualogic 4p"
+    },
+    {
+      "modelId": "4749",
+      "modelName": "LINEA ABSOLUTE 1.9/1.8 Flex Dualogic 4p"
+    },
+    {
+      "modelId": "6581",
+      "modelName": "LINEA ESSEN.SUBLIME 1.8 Flex 16V 4p"
+    },
+    {
+      "modelId": "6582",
+      "modelName": "LINEA ESSEN.SUBLIME Dual.1.8 Flex 16V 4p"
+    },
+    {
+      "modelId": "5577",
+      "modelName": "LINEA ESSENCE 1.8 Flex 16V 4p"
+    },
+    {
+      "modelId": "5578",
+      "modelName": "LINEA ESSENCE Dualogic 1.8 Flex 16V 4p"
+    },
+    {
+      "modelId": "4921",
+      "modelName": "LINEA LX 1.9/ 1.8 Flex 16V 4p"
+    },
+    {
+      "modelId": "4920",
+      "modelName": "LINEA LX 1.9/ 1.8 Flex 16V Dualogic 4p"
+    },
+    {
+      "modelId": "4751",
+      "modelName": "LINEA T-JET 1.4 16V Turbo 4p"
+    },
+    {
+      "modelId": "482",
+      "modelName": "Marea City"
+    },
+    {
+      "modelId": "483",
+      "modelName": "Marea ELX 1.8 mpi 16V 132cv 4p"
+    },
+    {
+      "modelId": "484",
+      "modelName": "Marea ELX 2.0 20V 4p"
+    },
+    {
+      "modelId": "485",
+      "modelName": "Marea ELX 2.4 mpi 20V 4p"
+    },
+    {
+      "modelId": "486",
+      "modelName": "Marea HLX 2.0 20V 4p"
+    },
+    {
+      "modelId": "487",
+      "modelName": "Marea HLX 2.4 mpi 20V 4p Aut."
+    },
+    {
+      "modelId": "488",
+      "modelName": "Marea HLX 2.4 mpi 20V 4p Mec."
+    },
+    {
+      "modelId": "489",
+      "modelName": "Marea SX 1.6 mpi 16V 106cv 4p"
+    },
+    {
+      "modelId": "490",
+      "modelName": "Marea SX 1.8 16V 4p"
+    },
+    {
+      "modelId": "491",
+      "modelName": "Marea SX 2.0 20V 4p"
+    },
+    {
+      "modelId": "492",
+      "modelName": "Marea Turbo 2.0 20V 4p"
+    },
+    {
+      "modelId": "493",
+      "modelName": "Marea Weekend City 4p"
+    },
+    {
+      "modelId": "494",
+      "modelName": "Marea Weekend ELX 1.8 mpi 16V 132cv 4p"
+    },
+    {
+      "modelId": "495",
+      "modelName": "Marea Weekend ELX 2.0 20V 4p"
+    },
+    {
+      "modelId": "496",
+      "modelName": "Marea Weekend ELX 2.4 mpi 20V 4p"
+    },
+    {
+      "modelId": "497",
+      "modelName": "Marea Weekend HLX 2.0 20V 4p"
+    },
+    {
+      "modelId": "498",
+      "modelName": "Marea Weekend HLX 2.4 mpi 20V 4p Aut."
+    },
+    {
+      "modelId": "499",
+      "modelName": "Marea Weekend HLX 2.4 mpi 20V 4p Mec."
+    },
+    {
+      "modelId": "500",
+      "modelName": "Marea Weekend SX 1.6 mpi 16V 106cv 4p"
+    },
+    {
+      "modelId": "501",
+      "modelName": "Marea Weekend SX 1.8 16V 4p"
+    },
+    {
+      "modelId": "502",
+      "modelName": "Marea Weekend SX 2.0 20V 4p"
+    },
+    {
+      "modelId": "503",
+      "modelName": "Marea Weekend Turbo 2.0 20V 4p"
+    },
+    {
+      "modelId": "7825",
+      "modelName": "MOBI DRIVE 1.0 Flex 6V 5p"
+    },
+    {
+      "modelId": "7920",
+      "modelName": "MOBI DRIVE GSR 1.0 Flex 6V 5p"
+    },
+    {
+      "modelId": "7538",
+      "modelName": "MOBI EASY 1.0 Fire Flex 5p."
+    },
+    {
+      "modelId": "8344",
+      "modelName": "MOBI EASY COMFORT 1.0 Flex 5p."
+    },
+    {
+      "modelId": "7539",
+      "modelName": "MOBI EASY on 1.0 Fire Flex 5p."
+    },
+    {
+      "modelId": "7540",
+      "modelName": "MOBI LIKE 1.0 Fire Flex 5p."
+    },
+    {
+      "modelId": "7541",
+      "modelName": "MOBI LIKE ON 1.0 Fire Flex 5p."
+    },
+    {
+      "modelId": "7612",
+      "modelName": "MOBI WAY 1.0 Fire Flex 5p."
+    },
+    {
+      "modelId": "7613",
+      "modelName": "MOBI WAY on 1.0 Fire Flex 5p."
+    },
+    {
+      "modelId": "504",
+      "modelName": "Oggi"
+    },
+    {
+      "modelId": "4826",
+      "modelName": "Palio 1.0 Cel. ECON./ITALIA F.Flex 8V 4p"
+    },
+    {
+      "modelId": "4825",
+      "modelName": "Palio 1.0 Celebr. ECONOMY F.Flex 8V 2p"
+    },
+    {
+      "modelId": "4827",
+      "modelName": "Palio 1.0 ECONOMY Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "4828",
+      "modelName": "Palio 1.0 ECONOMY Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "505",
+      "modelName": "Palio 1.0/ Trofeo 1.0 Fire/ Fire Flex 2p"
+    },
+    {
+      "modelId": "506",
+      "modelName": "Palio 1.0/ Trofeo 1.0 Fire/ Fire Flex 4p"
+    },
+    {
+      "modelId": "507",
+      "modelName": "Palio 1.5 mpi 8V 2p"
+    },
+    {
+      "modelId": "508",
+      "modelName": "Palio 1.5 mpi 8V 4p"
+    },
+    {
+      "modelId": "509",
+      "modelName": "Palio 1.6 mpi 16V 2p"
+    },
+    {
+      "modelId": "510",
+      "modelName": "Palio 1.6 mpi 16V 4p"
+    },
+    {
+      "modelId": "4290",
+      "modelName": "Palio 1.8R mpi Flex 8V 2p"
+    },
+    {
+      "modelId": "3883",
+      "modelName": "Palio 1.8R mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "7180",
+      "modelName": "Palio ATTRA. Best Seller 1.0 EVO Flex 5p"
+    },
+    {
+      "modelId": "7181",
+      "modelName": "Palio ATTRA. Best Seller 1.4 EVO Flex 5p"
+    },
+    {
+      "modelId": "5271",
+      "modelName": "Palio ATTRA./ITÁLIA 1.4 EVO F.Flex 8V 5p"
+    },
+    {
+      "modelId": "5721",
+      "modelName": "Palio ATTRACTIVE 1.0 EVO Fire Flex 8v 5p"
+    },
+    {
+      "modelId": "3965",
+      "modelName": "Palio Celebration 1.0 Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "3966",
+      "modelName": "Palio Celebration 1.0 Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "511",
+      "modelName": "Palio City 1.0 4p"
+    },
+    {
+      "modelId": "512",
+      "modelName": "Palio City 1.5/1.6 4p"
+    },
+    {
+      "modelId": "513",
+      "modelName": "Palio CityMatic 1.0 mpi"
+    },
+    {
+      "modelId": "514",
+      "modelName": "Palio ED 1.0 mpi 2p e 4p"
+    },
+    {
+      "modelId": "515",
+      "modelName": "Palio EDX 1.0 mpi 2p"
+    },
+    {
+      "modelId": "516",
+      "modelName": "Palio EDX 1.0 mpi 4p"
+    },
+    {
+      "modelId": "517",
+      "modelName": "Palio EL 1.5 mpi 2p e 4p"
+    },
+    {
+      "modelId": "518",
+      "modelName": "Palio EL 1.6 spi 2p e 4p"
+    },
+    {
+      "modelId": "521",
+      "modelName": "Palio ELX 1.0 Fire/30 Anos F. Flex 8V 4p"
+    },
+    {
+      "modelId": "520",
+      "modelName": "Palio ELX 1.0 mpi Fire 16v 4p (25 anos)"
+    },
+    {
+      "modelId": "519",
+      "modelName": "Palio ELX 1.0/ 1.0 Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "522",
+      "modelName": "Palio ELX 1.3 mpi  Fire 16V 4p"
+    },
+    {
+      "modelId": "523",
+      "modelName": "Palio ELX 1.3 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "524",
+      "modelName": "Palio ELX 1.4 Fire/30 Anos F. Flex 8V 4p"
+    },
+    {
+      "modelId": "525",
+      "modelName": "Palio ELX 1.5 4p"
+    },
+    {
+      "modelId": "526",
+      "modelName": "Palio ELX 1.6 4p"
+    },
+    {
+      "modelId": "527",
+      "modelName": "Palio ELX 1.6 mpi 16v 4p"
+    },
+    {
+      "modelId": "528",
+      "modelName": "Palio ELX 1.8/ 1.8 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "4967",
+      "modelName": "Palio ELX Dualogic 1.8 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "529",
+      "modelName": "Palio ELX/ 500 1.0 4p"
+    },
+    {
+      "modelId": "5293",
+      "modelName": "Palio ESSENCE 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "5294",
+      "modelName": "Palio ESSENCE Dualogic 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "530",
+      "modelName": "Palio EX 1.0 mpi 2p"
+    },
+    {
+      "modelId": "531",
+      "modelName": "Palio EX 1.0 mpi 4p"
+    },
+    {
+      "modelId": "533",
+      "modelName": "Palio EX 1.0 mpi Fire 8v 4p"
+    },
+    {
+      "modelId": "532",
+      "modelName": "Palio EX 1.0 mpi Fire/ Fire Flex 8v 2p"
+    },
+    {
+      "modelId": "534",
+      "modelName": "Palio EX 1.3 mpi Fire 8V 67cv 2p"
+    },
+    {
+      "modelId": "535",
+      "modelName": "Palio EX 1.3 mpi Fire 8V 67cv 4p"
+    },
+    {
+      "modelId": "536",
+      "modelName": "Palio EX 1.8 mpi 8V 103cv 4p"
+    },
+    {
+      "modelId": "537",
+      "modelName": "Palio EX Century 1.0 mpi Fire 16v 2p"
+    },
+    {
+      "modelId": "538",
+      "modelName": "Palio EX Century 1.0 mpi Fire 16v 4p"
+    },
+    {
+      "modelId": "539",
+      "modelName": "Palio HLX 1.8 mpi 8V 103cv 4p"
+    },
+    {
+      "modelId": "540",
+      "modelName": "Palio HLX 1.8 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "7026",
+      "modelName": "Palio Rua 1.0 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "6318",
+      "modelName": "Palio SPORT.INTERLAGOS 1.6 Flex 16V"
+    },
+    {
+      "modelId": "6319",
+      "modelName": "Palio SPORT.INTERLAGOS Dual.1.6 Flex 16V"
+    },
+    {
+      "modelId": "5696",
+      "modelName": "Palio SPORTING 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "7614",
+      "modelName": "Palio SPORTING B.Edit. 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "7615",
+      "modelName": "Palio SPORTING Dual. B.Edit. 1.6 Flex 5p"
+    },
+    {
+      "modelId": "5697",
+      "modelName": "Palio SPORTING Dualogic 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "541",
+      "modelName": "Palio Stile 1.6 mpi 16v 4p"
+    },
+    {
+      "modelId": "5879",
+      "modelName": "Palio W.Adv. LOC. ITAL.Dual.1.8 Flex 16V"
+    },
+    {
+      "modelId": "5881",
+      "modelName": "Palio W.ADV. LOCK. ITALIA 1.8 Flex 16V"
+    },
+    {
+      "modelId": "6836",
+      "modelName": "Palio Way 1.0 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "6837",
+      "modelName": "Palio Way Celebration 1.0 F. Flex 8V 5p"
+    },
+    {
+      "modelId": "5619",
+      "modelName": "Palio Week. Adv. Dualogic 1.8 Flex"
+    },
+    {
+      "modelId": "5880",
+      "modelName": "Palio Week. Adv. ITALIA 1.8 Flex 16V"
+    },
+    {
+      "modelId": "547",
+      "modelName": "Palio Week. Adv/Adv TRYON 1.8 mpi Flex"
+    },
+    {
+      "modelId": "5272",
+      "modelName": "Palio Week. ATTRACTIVE 1.4 Fire Flex 8V"
+    },
+    {
+      "modelId": "5882",
+      "modelName": "Palio Week.Adv. ITAL. Dual. 1.8 Flex 16V"
+    },
+    {
+      "modelId": "4968",
+      "modelName": "Palio Week.Adv.LOCK.Dualogic 1.8 Flex"
+    },
+    {
+      "modelId": "542",
+      "modelName": "Palio Weekend 1.0 6-marchas"
+    },
+    {
+      "modelId": "543",
+      "modelName": "Palio Weekend 1.5 mpi 4p"
+    },
+    {
+      "modelId": "544",
+      "modelName": "Palio Weekend 1.6 mpi 16V 4p"
+    },
+    {
+      "modelId": "7542",
+      "modelName": "Palio Weekend Adv. Ext. 1.8 Dual. Flex"
+    },
+    {
+      "modelId": "7543",
+      "modelName": "Palio Weekend Adv. Ext. 1.8 Flex"
+    },
+    {
+      "modelId": "7544",
+      "modelName": "Palio Weekend Adv. Loc.Ext.1.8 Dual.Flex"
+    },
+    {
+      "modelId": "7545",
+      "modelName": "Palio Weekend Adv. LOCKER Ext. 1.8 Flex"
+    },
+    {
+      "modelId": "545",
+      "modelName": "Palio Weekend Adventure 1.6 8V/16V"
+    },
+    {
+      "modelId": "546",
+      "modelName": "Palio Weekend Adventure 1.8 8V 103cv 4p"
+    },
+    {
+      "modelId": "4673",
+      "modelName": "Palio Weekend Adventure LOCKER 1.8 Flex"
+    },
+    {
+      "modelId": "548",
+      "modelName": "Palio Weekend City 1.5/ 1.6 4p"
+    },
+    {
+      "modelId": "549",
+      "modelName": "Palio Weekend ELX 1.0 mpi Fire 16V"
+    },
+    {
+      "modelId": "550",
+      "modelName": "Palio Weekend ELX 1.3 mpi  Fire 16V"
+    },
+    {
+      "modelId": "551",
+      "modelName": "Palio Weekend ELX 1.3 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "552",
+      "modelName": "Palio Weekend ELX 1.4 mpi Fire Flex 8V"
+    },
+    {
+      "modelId": "553",
+      "modelName": "Palio Weekend ELX 1.5 mpi 4p"
+    },
+    {
+      "modelId": "554",
+      "modelName": "Palio Weekend ELX 1.6 mpi"
+    },
+    {
+      "modelId": "555",
+      "modelName": "Palio Weekend EX 1.3 mpi Fire 8V 67cv 4p"
+    },
+    {
+      "modelId": "556",
+      "modelName": "Palio Weekend EX 1.5 mpi"
+    },
+    {
+      "modelId": "557",
+      "modelName": "Palio Weekend EX 1.8 mpi 8V 103cv 4p"
+    },
+    {
+      "modelId": "558",
+      "modelName": "Palio Weekend HLX 1.8 mpi Flex 4p"
+    },
+    {
+      "modelId": "559",
+      "modelName": "Palio Weekend Sport 1.6 mpi 16V 4p"
+    },
+    {
+      "modelId": "560",
+      "modelName": "Palio Weekend Stile 1.6 mpi 16V 4p"
+    },
+    {
+      "modelId": "561",
+      "modelName": "Palio Weekend Stile 1.8 mpi 8V 103cv 4p"
+    },
+    {
+      "modelId": "4674",
+      "modelName": "Palio Weekend Trekking 1.4 Fire Flex 8V"
+    },
+    {
+      "modelId": "5412",
+      "modelName": "Palio Weekend Trekking 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "5063",
+      "modelName": "Palio Weekend Trekking 1.8 mpi Flex 8V"
+    },
+    {
+      "modelId": "562",
+      "modelName": "Palio Young 1.0 mpi 8v 2p"
+    },
+    {
+      "modelId": "563",
+      "modelName": "Palio Young 1.0 mpi 8v 4p"
+    },
+    {
+      "modelId": "564",
+      "modelName": "Palio Young 1.0 mpi Fire 8V 2p"
+    },
+    {
+      "modelId": "565",
+      "modelName": "Palio Young 1.0 mpi Fire 8V 4p"
+    },
+    {
+      "modelId": "566",
+      "modelName": "Panorama C/CL"
+    },
+    {
+      "modelId": "567",
+      "modelName": "Premio CS 1.5 i.e. 2p/ SL 1.6/1.5/1.3 4p"
+    },
+    {
+      "modelId": "568",
+      "modelName": "Premio CS 1.6/ 1.5/ 1.3 2p"
+    },
+    {
+      "modelId": "569",
+      "modelName": "Premio CSL 1.6 i.e./ 1.5 4p"
+    },
+    {
+      "modelId": "570",
+      "modelName": "Premio CSL 1.6/ 1.5"
+    },
+    {
+      "modelId": "571",
+      "modelName": "Premio S 1.5 i.e./ 1.5 / 1.3"
+    },
+    {
+      "modelId": "4421",
+      "modelName": "Punto  ELX 1.4 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "4422",
+      "modelName": "Punto 1.4 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "5273",
+      "modelName": "Punto ATTRACTIVE 1.4 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "5883",
+      "modelName": "Punto ATTRACTIVE ITALIA 1.4 F.Flex 8V 5p"
+    },
+    {
+      "modelId": "6560",
+      "modelName": "Punto BLACKMOTION 1.8 Flex 16V 5p."
+    },
+    {
+      "modelId": "6561",
+      "modelName": "Punto BLACKMOTION Dual. 1.8 Flex 16v 5p"
+    },
+    {
+      "modelId": "572",
+      "modelName": "Punto Cabrio"
+    },
+    {
+      "modelId": "573",
+      "modelName": "Punto EL/ELX"
+    },
+    {
+      "modelId": "5295",
+      "modelName": "Punto ESSENCE 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "5296",
+      "modelName": "Punto ESSENCE 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "5463",
+      "modelName": "Punto ESSENCE Dualogic 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "5297",
+      "modelName": "Punto ESSENCE Dualogic 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "7182",
+      "modelName": "Punto ESSENCE SP 1.6 Flex 16V 5p"
+    },
+    {
+      "modelId": "7226",
+      "modelName": "Punto ESSENCE SP Dualogic 1.6 Flex 16V"
+    },
+    {
+      "modelId": "4423",
+      "modelName": "Punto HLX 1.8 Flex 8V 5p"
+    },
+    {
+      "modelId": "574",
+      "modelName": "Punto S"
+    },
+    {
+      "modelId": "4424",
+      "modelName": "Punto Sporting 1.8 Flex 8V/16V 5p"
+    },
+    {
+      "modelId": "5298",
+      "modelName": "Punto Sporting Dualogic 1.8 Flex 16V 5p"
+    },
+    {
+      "modelId": "575",
+      "modelName": "Punto SX"
+    },
+    {
+      "modelId": "4859",
+      "modelName": "Punto T-JET 1.4 16V Turbo 5p"
+    },
+    {
+      "modelId": "576",
+      "modelName": "Siena 1.0 mpi/ 500 1.0 mpi"
+    },
+    {
+      "modelId": "577",
+      "modelName": "Siena 1.0/ EX 1.0 mpi Fire/ Fire Flex 8v"
+    },
+    {
+      "modelId": "578",
+      "modelName": "Siena 1.5 mpi 8V 4p"
+    },
+    {
+      "modelId": "5299",
+      "modelName": "Siena ATTRACTIVE 1.0 Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "5300",
+      "modelName": "Siena ATTRACTIVE 1.4 Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "3967",
+      "modelName": "Siena Celebration 1.0 Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "579",
+      "modelName": "Siena City 4p"
+    },
+    {
+      "modelId": "4860",
+      "modelName": "Siena EL 1.0 mpi Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "5361",
+      "modelName": "Siena EL 1.4 mpi Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "580",
+      "modelName": "Siena EL 1.6 mpi 16V"
+    },
+    {
+      "modelId": "581",
+      "modelName": "Siena EL 1.6 spi"
+    },
+    {
+      "modelId": "4861",
+      "modelName": "Siena EL Celeb. 1.0 mpi Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "5362",
+      "modelName": "Siena EL Celeb. 1.4 mpi Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "582",
+      "modelName": "Siena ELX 1.0 mpi Fire 16v 4p (25 anos)"
+    },
+    {
+      "modelId": "583",
+      "modelName": "Siena ELX 1.0 mpi Fire/Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "584",
+      "modelName": "Siena ELX 1.3 mpi Fire 16V 4p"
+    },
+    {
+      "modelId": "585",
+      "modelName": "Siena ELX 1.3 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "586",
+      "modelName": "Siena ELX 1.4 mpi Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "587",
+      "modelName": "Siena ELX 1.5 mpi 4p"
+    },
+    {
+      "modelId": "588",
+      "modelName": "Siena ELX 1.6 mpi 8V/16V 4p"
+    },
+    {
+      "modelId": "589",
+      "modelName": "Siena ELX 1.8 mpi 8V 103cv 4p"
+    },
+    {
+      "modelId": "5301",
+      "modelName": "Siena ESSENCE 1.6 Flex 16V 4p"
+    },
+    {
+      "modelId": "5302",
+      "modelName": "Siena ESSENCE Dualogic 1.6 Flex 16V 4p"
+    },
+    {
+      "modelId": "590",
+      "modelName": "Siena EX 1.0 mpi Fire 16v 4p"
+    },
+    {
+      "modelId": "591",
+      "modelName": "Siena EX 1.3 mpi Fire 8V 67cv 4p"
+    },
+    {
+      "modelId": "592",
+      "modelName": "Siena EX 1.8 mpi 8V 103cv 4p"
+    },
+    {
+      "modelId": "593",
+      "modelName": "Siena HL 1.6 mpi 16V"
+    },
+    {
+      "modelId": "594",
+      "modelName": "Siena HLX 1.8 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "4969",
+      "modelName": "Siena HLX Dualogic 1.8 mpi Flex 8V 4p"
+    },
+    {
+      "modelId": "5363",
+      "modelName": "Siena Sporting 1.6 Flex 16V 4p"
+    },
+    {
+      "modelId": "5364",
+      "modelName": "Siena Sporting Dualogic 1.6 Flex 16V 4p"
+    },
+    {
+      "modelId": "595",
+      "modelName": "Siena Stile/Sport MTV 1.6 mpi 16V"
+    },
+    {
+      "modelId": "4133",
+      "modelName": "Siena TETRAFUEL 1.4 mpi Fire Flex 8v 4p"
+    },
+    {
+      "modelId": "5064",
+      "modelName": "Stilo 1.8 ATTRACTIVE Flex 8V 5p"
+    },
+    {
+      "modelId": "597",
+      "modelName": "Stilo 1.8 MS Lim.Edit./ MS Season 16V"
+    },
+    {
+      "modelId": "4187",
+      "modelName": "Stilo 1.8 SP Flex 8V 5p"
+    },
+    {
+      "modelId": "4329",
+      "modelName": "Stilo 1.8 Sporting Flex 8V 5P"
+    },
+    {
+      "modelId": "596",
+      "modelName": "Stilo 1.8/ 1.8 Connect 8V 103cv 5p"
+    },
+    {
+      "modelId": "3813",
+      "modelName": "Stilo 1.8/ 1.8 Connect Flex 8V 5p"
+    },
+    {
+      "modelId": "598",
+      "modelName": "Stilo 1.8/ 1.8 SP/ Connect 16V 122cv 5p"
+    },
+    {
+      "modelId": "599",
+      "modelName": "Stilo 2.4 Abarth 20V 167cv 5p"
+    },
+    {
+      "modelId": "4862",
+      "modelName": "Stilo Dualogic 1.8 BlackMotion Flex 8V"
+    },
+    {
+      "modelId": "4529",
+      "modelName": "Stilo Dualogic 1.8 Flex 8V 5p"
+    },
+    {
+      "modelId": "4530",
+      "modelName": "Stilo Dualogic 1.8 SP Flex 8V 5p"
+    },
+    {
+      "modelId": "4531",
+      "modelName": "Stilo Dualogic 1.8 Sporting Flex 8V 5p"
+    },
+    {
+      "modelId": "5065",
+      "modelName": "Stilo Duologic 1.8 ATTRACTIVE Flex 8V 5p"
+    },
+    {
+      "modelId": "600",
+      "modelName": "Strada 1.3 mpi Fire 8V 67cv CE"
+    },
+    {
+      "modelId": "601",
+      "modelName": "Strada 1.3 mpi Fire 8V 67cv CS"
+    },
+    {
+      "modelId": "602",
+      "modelName": "Strada 1.4 mpi Fire Flex 8V CE"
+    },
+    {
+      "modelId": "603",
+      "modelName": "Strada 1.4 mpi Fire Flex 8V CS"
+    },
+    {
+      "modelId": "7450",
+      "modelName": "Strada Adv. Ext. 1.8 LOCKER Dual.Flex CE"
+    },
+    {
+      "modelId": "7451",
+      "modelName": "Strada Adv. Ext./ Ext.1.8 LOCKER Flex CE"
+    },
+    {
+      "modelId": "7452",
+      "modelName": "Strada Adv. Extreme 1.8 Dual. Flex CE"
+    },
+    {
+      "modelId": "6517",
+      "modelName": "Strada Adv. M. March. 1.8 Flex 16V CD"
+    },
+    {
+      "modelId": "6518",
+      "modelName": "Strada Adv. M. March.1.8 Dual. Flex CD"
+    },
+    {
+      "modelId": "6636",
+      "modelName": "Strada Adv.1.8 16V  LOCKER Dual. Flex CE"
+    },
+    {
+      "modelId": "5620",
+      "modelName": "Strada Adv.1.8 16V Dualogic Flex CD"
+    },
+    {
+      "modelId": "6637",
+      "modelName": "Strada Adv.1.8 16V Dualogic Flex CE"
+    },
+    {
+      "modelId": "5621",
+      "modelName": "Strada Adv.1.8 16V LOCKER Dualo. Flex CD"
+    },
+    {
+      "modelId": "7453",
+      "modelName": "Strada Adv.Ext. 1.8 LOCKER Dual. Flex CD"
+    },
+    {
+      "modelId": "7454",
+      "modelName": "Strada Adv.Ext./ Ext. 1.8 LOCKER Flex CD"
+    },
+    {
+      "modelId": "606",
+      "modelName": "Strada Adv/Adv TRYON 1.8 mpi Flex 8V CE"
+    },
+    {
+      "modelId": "604",
+      "modelName": "Strada Adventure 1.6 mpi 16V CE"
+    },
+    {
+      "modelId": "605",
+      "modelName": "Strada Adventure 1.8 mpi 8V 103cv CE"
+    },
+    {
+      "modelId": "4733",
+      "modelName": "Strada Adventure 1.8/ 1.8 LOCKER Flex CE"
+    },
+    {
+      "modelId": "7455",
+      "modelName": "Strada Adventure Ext. 1.8  Dual. Flex CD"
+    },
+    {
+      "modelId": "4970",
+      "modelName": "Strada Adventure1.8/ 1.8 LOCKER Flex CD"
+    },
+    {
+      "modelId": "5274",
+      "modelName": "Strada Celeb. 1.4 mpi Fire Flex 8V CE"
+    },
+    {
+      "modelId": "5275",
+      "modelName": "Strada Celeb. 1.4 mpi Fire Flex 8V CS"
+    },
+    {
+      "modelId": "8399",
+      "modelName": "Strada Freedom 1.4 Flex 8V CD"
+    },
+    {
+      "modelId": "8544",
+      "modelName": "Strada Freedom 1.4 Flex 8V CS"
+    },
+    {
+      "modelId": "607",
+      "modelName": "Strada LX 1.6 16V CE"
+    },
+    {
+      "modelId": "608",
+      "modelName": "Strada LX 1.6 mpi 16V"
+    },
+    {
+      "modelId": "5464",
+      "modelName": "Strada Sporting 1.8 Flex 16V CE"
+    },
+    {
+      "modelId": "6519",
+      "modelName": "Strada Trek. M. March. 1.6 Flex 16V CE"
+    },
+    {
+      "modelId": "3884",
+      "modelName": "Strada Trekking 1.4 mpi Fire Flex 8V CE"
+    },
+    {
+      "modelId": "3885",
+      "modelName": "Strada Trekking 1.4 mpi Fire Flex 8V CS"
+    },
+    {
+      "modelId": "6055",
+      "modelName": "Strada Trekking 1.6 16V Flex CD"
+    },
+    {
+      "modelId": "6056",
+      "modelName": "Strada Trekking 1.6 16V Flex CE"
+    },
+    {
+      "modelId": "6057",
+      "modelName": "Strada Trekking 1.6 16V Flex CS"
+    },
+    {
+      "modelId": "7227",
+      "modelName": "Strada Trekking 1.6 16V LOCKER Flex  CD"
+    },
+    {
+      "modelId": "609",
+      "modelName": "Strada Trekking 1.6 mpi"
+    },
+    {
+      "modelId": "610",
+      "modelName": "Strada Trekking 1.8 mpi Flex 8V CE"
+    },
+    {
+      "modelId": "611",
+      "modelName": "Strada Trekking 1.8 mpi Flex 8V CS"
+    },
+    {
+      "modelId": "5066",
+      "modelName": "Strada Working 1.4 mpi Fire Flex 8V CD"
+    },
+    {
+      "modelId": "5067",
+      "modelName": "Strada Working 1.4 mpi Fire Flex 8V CE"
+    },
+    {
+      "modelId": "5068",
+      "modelName": "Strada Working 1.4 mpi Fire Flex 8V CS"
+    },
+    {
+      "modelId": "612",
+      "modelName": "Strada Working 1.6 mpi 16V CE"
+    },
+    {
+      "modelId": "613",
+      "modelName": "Strada Working 1.6 mpi 16V CS"
+    },
+    {
+      "modelId": "614",
+      "modelName": "Strada Working 1.8 mpi 8v 103cv CE"
+    },
+    {
+      "modelId": "615",
+      "modelName": "Strada Working 1.8 mpi 8V 103cv CS"
+    },
+    {
+      "modelId": "6096",
+      "modelName": "Strada Working Celeb.1.4 Fire Flex 8V CD"
+    },
+    {
+      "modelId": "6097",
+      "modelName": "Strada Working Celeb.1.4 Fire Flex 8V CE"
+    },
+    {
+      "modelId": "6098",
+      "modelName": "Strada Working Celeb.1.4 Fire Flex 8V CS"
+    },
+    {
+      "modelId": "7134",
+      "modelName": "Strada Working HARD 1.4 Fire Flex 8V CD"
+    },
+    {
+      "modelId": "7135",
+      "modelName": "Strada Working HARD 1.4 Fire Flex 8V CE"
+    },
+    {
+      "modelId": "7136",
+      "modelName": "Strada Working HARD 1.4 Fire Flex 8V CS"
+    },
+    {
+      "modelId": "7752",
+      "modelName": "Strada Working Plus 1.4 8V Flex CS"
+    },
+    {
+      "modelId": "616",
+      "modelName": "Strada/ Strada Working 1.5 mpi 8V CE"
+    },
+    {
+      "modelId": "617",
+      "modelName": "Strada/ Strada Working 1.5 mpi 8V CS"
+    },
+    {
+      "modelId": "618",
+      "modelName": "Tempra 2.0 i.e 16V 2p e 4p"
+    },
+    {
+      "modelId": "619",
+      "modelName": "Tempra 2.0 i.e. 8V 2p e 4p"
+    },
+    {
+      "modelId": "620",
+      "modelName": "Tempra 2.0 mpi 16V"
+    },
+    {
+      "modelId": "621",
+      "modelName": "Tempra 8V/ City 8V"
+    },
+    {
+      "modelId": "622",
+      "modelName": "Tempra HLX 2.0 16V 4p"
+    },
+    {
+      "modelId": "623",
+      "modelName": "Tempra Ouro 16V 2p e 4p"
+    },
+    {
+      "modelId": "624",
+      "modelName": "Tempra Ouro/Prata 2.0 2p e 4p"
+    },
+    {
+      "modelId": "625",
+      "modelName": "Tempra Stile 2.0 i.e. Turbo 4p"
+    },
+    {
+      "modelId": "626",
+      "modelName": "Tempra SW SLX 2.0 i.e."
+    },
+    {
+      "modelId": "627",
+      "modelName": "Tempra SX 2.0 16V 4p"
+    },
+    {
+      "modelId": "628",
+      "modelName": "Tempra SX 2.0 i.e. 8V 4p"
+    },
+    {
+      "modelId": "629",
+      "modelName": "Tempra Turbo 2.0 i.e. 2p"
+    },
+    {
+      "modelId": "630",
+      "modelName": "Tipo 1.6 i.e. 2p e 4p"
+    },
+    {
+      "modelId": "631",
+      "modelName": "Tipo 1.6 mpi 4p"
+    },
+    {
+      "modelId": "632",
+      "modelName": "Tipo 2.0 16V 2p/4p"
+    },
+    {
+      "modelId": "633",
+      "modelName": "Tipo 2.0 SLX 4p"
+    },
+    {
+      "modelId": "8046",
+      "modelName": "Toro Blackjack 2.4 16V flex Aut"
+    },
+    {
+      "modelId": "8236",
+      "modelName": "Toro Endurence 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "7475",
+      "modelName": "Toro Freedom 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "7476",
+      "modelName": "Toro Freedom 2.0 16V 4x2 TB Diesel Mec."
+    },
+    {
+      "modelId": "7949",
+      "modelName": "Toro Freedom 2.0 16V 4x4 Diesel Aut."
+    },
+    {
+      "modelId": "7477",
+      "modelName": "Toro Freedom 2.0 16V 4x4 TB Diesel Mec."
+    },
+    {
+      "modelId": "7789",
+      "modelName": "Toro Freedom 2.4 16V Flex Aut."
+    },
+    {
+      "modelId": "7950",
+      "modelName": "Toro Freedom Road 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "7951",
+      "modelName": "Toro Freedom Road 2.4 16V Flex Aut."
+    },
+    {
+      "modelId": "7921",
+      "modelName": "Toro Opening Ed. Plus 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "7478",
+      "modelName": "Toro Opening Edition 1.8 16V Flex Aut."
+    },
+    {
+      "modelId": "8473",
+      "modelName": "Toro Ranch 2.0 16V 4x4 Diesel Aut."
+    },
+    {
+      "modelId": "7479",
+      "modelName": "Toro Volcano 2.0 16V 4x4 TB Diesel Aut."
+    },
+    {
+      "modelId": "8237",
+      "modelName": "Toro Volcano 2.4 16V Flex Aut."
+    },
+    {
+      "modelId": "634",
+      "modelName": "Uno 1.6 mpi 2p e 4p"
+    },
+    {
+      "modelId": "635",
+      "modelName": "Uno 1.6R mpi / 1.6R / 1.5R"
+    },
+    {
+      "modelId": "5480",
+      "modelName": "UNO ATTRACTI. Celeb.1.4 EVO F.Flex 8V 2p"
+    },
+    {
+      "modelId": "5240",
+      "modelName": "UNO ATTRACTI. Celeb.1.4 EVO F.Flex 8V 4p"
+    },
+    {
+      "modelId": "6957",
+      "modelName": "UNO ATTRACTIVE 1.0 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "7732",
+      "modelName": "UNO ATTRACTIVE 1.0 Flex 6V 5p"
+    },
+    {
+      "modelId": "5481",
+      "modelName": "UNO ATTRACTIVE 1.4 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5239",
+      "modelName": "UNO ATTRACTIVE 1.4 EVO Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "636",
+      "modelName": "Uno City / Smart City 1.0 4p"
+    },
+    {
+      "modelId": "637",
+      "modelName": "Uno CS/Top/Sport 1.5 i.e. / 1.5 /1.3"
+    },
+    {
+      "modelId": "638",
+      "modelName": "Uno CS/Top/Sport 1.5 i.e. / 1.5 4p"
+    },
+    {
+      "modelId": "639",
+      "modelName": "Uno CSL 1.6 4p (Argentino)"
+    },
+    {
+      "modelId": "7952",
+      "modelName": "UNO DRIVE 1.0 Flex 6V 5p"
+    },
+    {
+      "modelId": "5664",
+      "modelName": "UNO ECONOMY 1.4 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5665",
+      "modelName": "UNO ECONOMY 1.4 EVO Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "5666",
+      "modelName": "UNO ECONOMY Celeb. 1.4 EVO F. Flex 8V 2p"
+    },
+    {
+      "modelId": "5667",
+      "modelName": "UNO ECONOMY Celeb. 1.4 EVO F. Flex 8V 4p"
+    },
+    {
+      "modelId": "6958",
+      "modelName": "UNO EVOLUTION 1.4 Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "7119",
+      "modelName": "UNO Furgão 1.0 Fire Flex 8V 3p"
+    },
+    {
+      "modelId": "640",
+      "modelName": "Uno Furgão 1.3 mpi Fire/ Fire Flex 8V"
+    },
+    {
+      "modelId": "641",
+      "modelName": "Uno Furgão 1.5 mpi/i.e."
+    },
+    {
+      "modelId": "642",
+      "modelName": "Uno Furgão 1.5/ 1.3"
+    },
+    {
+      "modelId": "643",
+      "modelName": "Uno Mille  ELX  2p e 4p"
+    },
+    {
+      "modelId": "646",
+      "modelName": "Uno Mille 1.0 Electronic 4p"
+    },
+    {
+      "modelId": "644",
+      "modelName": "Uno Mille 1.0 Fire/ F.Flex/ ECONOMY 2p"
+    },
+    {
+      "modelId": "645",
+      "modelName": "Uno Mille 1.0 Fire/ F.Flex/ ECONOMY 4p"
+    },
+    {
+      "modelId": "647",
+      "modelName": "Uno Mille 1.0/ i.e./Electronic/Brio 2p"
+    },
+    {
+      "modelId": "4763",
+      "modelName": "Uno Mille Celeb. WAY ECON. 1.0 F.Flex 2p"
+    },
+    {
+      "modelId": "4764",
+      "modelName": "Uno Mille Celeb. WAY ECON. 1.0 F.Flex 4p"
+    },
+    {
+      "modelId": "4316",
+      "modelName": "Uno Mille Celeb/Celeb.ECON 1.0 F.Flex 2p"
+    },
+    {
+      "modelId": "4317",
+      "modelName": "Uno Mille Celeb/Celeb.ECON 1.0 F.Flex 4p"
+    },
+    {
+      "modelId": "648",
+      "modelName": "Uno Mille EP 2p e 4p"
+    },
+    {
+      "modelId": "6692",
+      "modelName": "Uno Mille Grazie 1.0 Fire Flex 8v 4p"
+    },
+    {
+      "modelId": "650",
+      "modelName": "Uno Mille SX 2p e 4p"
+    },
+    {
+      "modelId": "651",
+      "modelName": "Uno Mille SX Young 1.0 IE"
+    },
+    {
+      "modelId": "6320",
+      "modelName": "UNO MILLE WAY ECO.XINGU 1.0 F.Flex 8v 5p"
+    },
+    {
+      "modelId": "4765",
+      "modelName": "Uno Mille WAY ECONOMY 1.0 F.Flex 2p"
+    },
+    {
+      "modelId": "4766",
+      "modelName": "Uno Mille WAY ECONOMY 1.0 F.Flex 4p"
+    },
+    {
+      "modelId": "649",
+      "modelName": "Uno Mille/ Mille EX/ Smart 2p"
+    },
+    {
+      "modelId": "652",
+      "modelName": "Uno Mille/ Mille EX/ Smart 4p"
+    },
+    {
+      "modelId": "653",
+      "modelName": "Uno S 1.5 i.e. / 1.5 / 1.3/ SX 1.3"
+    },
+    {
+      "modelId": "7616",
+      "modelName": "UNO SPORT. Dual. 1.4 B.Edit. Flex 8V 5p"
+    },
+    {
+      "modelId": "6321",
+      "modelName": "UNO SPORT.INTERLAGOS 1.4 EVO F.Flex 8v"
+    },
+    {
+      "modelId": "7733",
+      "modelName": "UNO SPORTING 1.3 Flex 8V 5p"
+    },
+    {
+      "modelId": "7617",
+      "modelName": "UNO SPORTING 1.4 B.Edit. Flex 8V 5p"
+    },
+    {
+      "modelId": "5482",
+      "modelName": "UNO SPORTING 1.4 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5465",
+      "modelName": "UNO SPORTING 1.4 EVO Fire Flex 8V 4p"
+    },
+    {
+      "modelId": "7734",
+      "modelName": "UNO SPORTING Dual./GSR 1.3 Flex 8V 5p"
+    },
+    {
+      "modelId": "7070",
+      "modelName": "UNO SPORTING Dualogic 1.4 EVO Flex 8V 4p"
+    },
+    {
+      "modelId": "654",
+      "modelName": "Uno Turbo 1.4 i.e. 2p"
+    },
+    {
+      "modelId": "5483",
+      "modelName": "UNO VIVACE 1.0 EVO Fire Flex 8V 3p"
+    },
+    {
+      "modelId": "5484",
+      "modelName": "UNO VIVACE Celeb. 1.0 EVO F. Flex 8V 3p"
+    },
+    {
+      "modelId": "5242",
+      "modelName": "UNO VIVACE Celeb. 1.0 EVO F.Flex 8V 5p"
+    },
+    {
+      "modelId": "6520",
+      "modelName": "UNO VIVACE College 1.0 EVO FireFlex 5p"
+    },
+    {
+      "modelId": "7149",
+      "modelName": "UNO VIVACE ITALIA 1.0 EVO F. Flex 8V 5p"
+    },
+    {
+      "modelId": "5241",
+      "modelName": "UNO VIVACE/RUA 1.0 EVO Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "5485",
+      "modelName": "UNO WAY 1.0 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5243",
+      "modelName": "UNO WAY 1.0 EVO Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "7735",
+      "modelName": "UNO WAY 1.0 Flex 6V 5p"
+    },
+    {
+      "modelId": "7736",
+      "modelName": "UNO WAY 1.3 Flex 8V 5p"
+    },
+    {
+      "modelId": "7027",
+      "modelName": "UNO WAY 1.4 EVO Dualogic Flex 8V 5p"
+    },
+    {
+      "modelId": "5486",
+      "modelName": "UNO WAY 1.4 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5244",
+      "modelName": "UNO WAY 1.4 EVO Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "5487",
+      "modelName": "UNO WAY Celeb. 1.0 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5245",
+      "modelName": "UNO WAY Celeb. 1.0 EVO Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "5488",
+      "modelName": "UNO WAY Celeb. 1.4 EVO Fire Flex 8V 2p"
+    },
+    {
+      "modelId": "5246",
+      "modelName": "UNO WAY Celeb. 1.4 EVO Fire Flex 8V 5p"
+    },
+    {
+      "modelId": "7737",
+      "modelName": "UNO WAY Dual./GSR 1.3 Flex 8V 5p"
+    },
+    {
+      "modelId": "7183",
+      "modelName": "UNO WAY RIO 450 1.0 EVO Flex 8V 5p"
+    },
+    {
+      "modelId": "6322",
+      "modelName": "UNO WAY XINGU 1.0 EVO F.Flex 8V 5P"
+    },
+    {
+      "modelId": "6323",
+      "modelName": "UNO WAY XINGU 1.4 EVO F.Flex 8V 5p"
+    }
+  ]
+}

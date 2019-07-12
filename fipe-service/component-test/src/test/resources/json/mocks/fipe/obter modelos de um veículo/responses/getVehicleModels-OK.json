@@ -1,0 +1,65 @@
+[
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1999-1",
+    "name": "1999 Gasolina",
+    "marca": "FIAT",
+    "key": "1999-1",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1999-1"
+  },
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1999-2",
+    "name": "1999 \u00c1lcool",
+    "marca": "FIAT",
+    "key": "1999-2",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1999-2"
+  },
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1998-1",
+    "name": "1998 Gasolina",
+    "marca": "FIAT",
+    "key": "1998-1",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1998-1"
+  },
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1998-2",
+    "name": "1998 \u00c1lcool",
+    "marca": "FIAT",
+    "key": "1998-2",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1998-2"
+  },
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1997-1",
+    "name": "1997 Gasolina",
+    "marca": "FIAT",
+    "key": "1997-1",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1997-1"
+  },
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1997-2",
+    "name": "1997 \u00c1lcool",
+    "marca": "FIAT",
+    "key": "1997-2",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1997-2"
+  },
+  {
+    "fipe_marca": "Fiat",
+    "fipe_codigo": "1996-1",
+    "name": "1996 Gasolina",
+    "marca": "FIAT",
+    "key": "1996-1",
+    "veiculo": "Palio EDX 1.0 mpi 2p",
+    "id": "1996-1"
+  }
+]
