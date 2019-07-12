@@ -2,14 +2,14 @@ hosts:
   app:
     default: http://localhost:8080
     services:
-      marcas-por-tipo-de-veículo: /fipe/brands
-      modelos-de-uma-marca: /fipe/brands/{brandId}/models
-      detalhes-de-um-modelo: /fipe/brands/{brandId}/models/{modelId}/details
+      marcas por tipo de veículo: /fipe/brands
+      modelos de uma marca: /fipe/brands/{brandId}/models
+      detalhes de um modelo: /fipe/brands/{brandId}/models/{modelId}/details
   fipe:
     mocked: true
     default: http://localhost:8901
     services:
-      obter-marcas-de-carros: /{vehicleType}/marcas.json
-      obter-veículos-de-uma-marca: /{vehicleType}/veiculos/{brandId}.json
-      obter-modelos-de-um-veículo: /{vehicleType}/veiculo/{brandId}/{vehicleId}.json
-      obter-detalhes-de-um-modelo: /{vehicleType}/veiculo/{brandId}/{vehicleId}/{modelId}.json
+      obter marcas de carros: /{vehicleType}/marcas.json
+      obter veículos de uma marca: /{vehicleType}/veiculos/{brandId}.json
+      obter modelos de um veículo: /{vehicleType}/veiculo/{brandId}/{vehicleId}.json
+      obter detalhes de um modelo: /{vehicleType}/veiculo/{brandId}/{vehicleId}/{modelId}.json

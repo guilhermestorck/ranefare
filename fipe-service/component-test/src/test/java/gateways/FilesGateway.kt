@@ -11,8 +11,7 @@ object FilesGateway {
         return getFileAsString("${getResourcePath(resourcePath)}/responses/$resourceName.json")
     }
 
-    private fun getResourcePath(resourcePath: String): String =
-        "$BASE_FOLDER/${resourcePath.replace(' ', '-')}"
+    private fun getResourcePath(resourcePath: String): String = "$BASE_FOLDER/$resourcePath"
 
     private fun getFileAsString(filePath: String): String {
         try {

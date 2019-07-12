@@ -58,7 +58,7 @@ object DataTableParser {
         val stringJsonBody = getStringRequestBody("mocks/$integrationName/$serviceName", requestMap[BODY].orEmpty().trim())
 
         if (method == "GET" && stringJsonBody != null)
-            throw UnsupportedOperationException("A GET request can't have a body.")
+            throw UnsupportedOperationException("Um request com método 'GET' não pode ter 'body'.")
 
         return StubbyRequest(
             request = StubbyRequestBody(
@@ -84,11 +84,12 @@ object DataTableParser {
             .drop(1)
             .map { row ->
                 if (row.size != 3) throw UnsupportedOperationException(
-                    "Not valid IntegrationMockTimesDataTable row: $row. " +
-                        "An IntegrationMockTimesDataTable row must be in the format \"| integrationName | serviceName | times |\"")
+                    "Formato inválido para IntegrationMockTimesDataTable na linha a seguir: '$row'. " +
+                        "Um IntegrationMockTimesDataTable válido deve seguir o seguinte formato: " +
+                        "'| Nome da integração | Nome do serviço | Acionamentos no mock |'.")
                 IntegrationMockTimes(
-                    integrationName = row[0].replace(' ', '-'),
-                    serviceName = row[1].replace(' ', '-'),
+                    integrationName = row[0],
+                    serviceName = row[1],
                     times = row[2].toInt()
                 )
             }.toList()
@@ -141,7 +142,7 @@ object DataTableParser {
             val parts = it[1].split(":")
             if (parts.size != 2)
                 throw UnsupportedOperationException(
-                    "Not valid EntryMap value: ${it[1]}. An EntryMap value must be in the format \"key: value\"")
+                    "Formato inválido para valor mapeado: '${it[1]}'. Um valor mapeado válido deve estar no seguinte formato: 'key: value'")
 
             parts[0].trim() to parts[1].trim()
         }?.toMap()
@@ -166,8 +167,8 @@ object DataTableParser {
 
         if (!itemTableValue.startsWith("[") || !itemTableValue.endsWith("]"))
             throw UnsupportedOperationException(
-                "Not valid Mapped value: $itemTableValue. " +
-                    "A Mapped value must be in the format \"[key1: value1, key2: value2, ... , keyN: valueN]\"")
+                "Formato inválido para mapa de valores: '$itemTableValue'. " +
+                    "Um mapa de valores válido deve estar no seguinte formato: '[key1: value1, key2: value2, ... , keyN: valueN]'.")
 
         return itemTableValue.removePrefix("[")
             .removeSuffix("]")
@@ -175,7 +176,8 @@ object DataTableParser {
                 val separatedPair = pair.trim().split(":")
                 if (separatedPair.size != 2)
                     throw UnsupportedOperationException(
-                        "Not valid EntryMap value: $separatedPair. An EntryMap value must be in the format \"key: value\"")
+                        "Formato inválido para valor mapeado: '$separatedPair'. " +
+                            "Um valor mapeado válido deve estar no seguinte formato: 'key: value'")
 
                 separatedPair[0].trim() to separatedPair[1].trim()
             }.toMap()

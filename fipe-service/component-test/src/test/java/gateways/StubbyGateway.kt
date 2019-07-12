@@ -25,7 +25,8 @@ object StubbyGateway {
             json = JSONTokener(gson.toJson(stubbyRequest)).nextValue()
         )
 
-        return getStubbyId(response) ?: throw UnexpectedException("The stubby didn't return an identifier to mock.")
+        return getStubbyId(response)
+            ?: throw UnexpectedException("O Stubby não retornou um indicador para o mock que deveria ter sido criado.")
     }
 
     fun getAllServices(integrationName: String): List<StubbyResponse> {

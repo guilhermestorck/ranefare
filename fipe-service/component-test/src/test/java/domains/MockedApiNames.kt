@@ -19,8 +19,7 @@ data class MockedApiNames(
     }
 
     fun getHostApi(hostName: String, serviceName: String) =
-        hosts.getValue(hostName.replace(' ', '-'))
-            .services.getValue(serviceName.replace(' ', '-'))
+        hosts.getValue(hostName).services.getValue(serviceName)
 
     fun getHostUrl(hostName: String, serviceName: String) =
         getHostAddress(hostName).plus(getHostApi(hostName, serviceName))

@@ -14,8 +14,8 @@ Funcionalidade: Comunicação com a API pública conhecida como tabela FIPE
       | status | 200          |
       | body   | getBrands-OK |
     E apenas os mocks de integrações abaixo foram chamados:
-      | integração | serviço                | quantidade de vezes |
-      | fipe       | obter marcas de carros | 1                   |
+      | Nome da integração | Nome do serviço        | Acionamentos no mock |
+      | fipe               | obter marcas de carros | 1                    |
 
   Cenário: Usuário tenta obter todas as marcas de carros e recebe resposta vazia na integração com a Fipe
     Dado um mock no serviço "obter marcas de carros" da integração "fipe" com requisição e resposta com os atributos:
@@ -27,8 +27,8 @@ Funcionalidade: Comunicação com a API pública conhecida como tabela FIPE
       | status | 500                                    |
       | body   | getBrands-IntegrationError-EmptyResult |
     E apenas os mocks de integrações abaixo foram chamados:
-      | integração | serviço                | quantidade de vezes |
-      | fipe       | obter marcas de carros | 1                   |
+      | Nome da integração | Nome do serviço        | Acionamentos no mock |
+      | fipe               | obter marcas de carros | 1                    |
 
   Cenário: Usuário tenta obter todas as marcas de carros e ocorre erro na integração com a FIPE
     Dado um mock no serviço "obter marcas de carros" da integração "fipe" com requisição e resposta com os atributos:
@@ -40,5 +40,5 @@ Funcionalidade: Comunicação com a API pública conhecida como tabela FIPE
       | status | 500                            |
       | body   | getBrands-IntegrationError-500 |
     E apenas os mocks de integrações abaixo foram chamados:
-      | integração | serviço                | quantidade de vezes |
-      | fipe       | obter marcas de carros | 1                   |
+      | Nome da integração | Nome do serviço        | Acionamentos no mock |
+      | fipe               | obter marcas de carros | 1                    |

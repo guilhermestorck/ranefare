@@ -19,11 +19,8 @@ class MockSteps : Pt {
 
         Dado("^um mock no serviço \"([^\"]*)\" da integração \"([^\"]*)\" com requisição e resposta com os atributos:$")
         { serviceName: String, integrationName: String, dataTable: DataTable ->
-            val formattedIntegrationName = integrationName.replace(' ', '-')
-            val formattedServiceName = serviceName.replace(' ', '-')
-
-            if (mocks[formattedIntegrationName] == null) mocks[formattedIntegrationName] = mutableMapOf<String, Int>()
-            mocks[formattedIntegrationName]!![formattedServiceName] = StubbyGateway.create(formattedServiceName, formattedIntegrationName, dataTable)
+            if (mocks[integrationName] == null) mocks[integrationName] = mutableMapOf<String, Int>()
+            mocks[integrationName]!![serviceName] = StubbyGateway.create(serviceName, integrationName, dataTable)
         }
 
         E("^apenas os mocks de integrações abaixo foram chamados:$")
@@ -41,15 +38,12 @@ class MockSteps : Pt {
                     timesList.forEach { times ->
                         val stubbyId = mocks[times.integrationName]?.get(times.serviceName)
                         if (stubbyId == null) {
-                            fail("There isn't any stubby for " +
-                                "\"${times.serviceName}\" service of " +
-                                "\"${times.integrationName}\" integration.")
+                            fail("Não existe nenhum mock no Stubby para o serviço '${times.serviceName}' " +
+                                "da integração '${times.integrationName}'.")
                         }
                         assertEquals(
-                            "The stubby hits of " +
-                                "\"${times.serviceName}\" service of " +
-                                "\"${times.integrationName}\" integration is ${stubbyHits[stubbyId]}, " +
-                                "but should be ${times.times}.",
+                            "O mock do serviço '${times.serviceName}' da integração '${times.integrationName}' " +
+                                "foi acionado ${stubbyHits[stubbyId]} vez(es), mas devia ter sido acionado ${times.times} vez(es).",
                             stubbyHits[stubbyId],
                             times.times)
                     }
@@ -60,21 +54,21 @@ class MockSteps : Pt {
                             stubbyId == hitsEntry.key
                         }
                         if (timesRowsMatched.isEmpty()) {
-                            fail("There is a stubby with id " +
-                                "${hitsEntry.key} that was hit ${hitsEntry.value} times, " +
-                                "but there isn't a table test for its.")
+                            fail("Existe um mock no Stubby com id " +
+                                "${hitsEntry.key} que foi acionado ${hitsEntry.value} vez(es), " +
+                                "mas isso não está descrito na tabela de validação de acionamentos dos mocks.")
                         }
 
                         val timesRowMatched = timesRowsMatched.first()
                         if (timesRowsMatched.size != 1)
-                            fail("There are ${timesRowsMatched.size} assert rows for " +
-                                "\"${timesRowMatched.serviceName}\" service of " +
-                                "\"${timesRowMatched.integrationName}\" integration.")
+                            fail("Existe ${timesRowsMatched.size} linhas de validação para o serviço " +
+                                "\"${timesRowMatched.serviceName}\" da integração " +
+                                "\"${timesRowMatched.integrationName}\". Revise sua tabela de validação de acionamentos dos mocks.")
 
                         assertEquals(
-                            "There is a stubby with id " +
-                                "${hitsEntry.key} that was hit ${hitsEntry.value} times, " +
-                                "but the times in table test is ${timesRowMatched.times}.", hitsEntry.value, timesRowMatched.times)
+                            "O mock do serviço '${timesRowMatched.serviceName}' da integração '${timesRowMatched.integrationName}' " +
+                                "foi acionado ${hitsEntry.value} vez(es), mas devia ter sido acionado ${timesRowMatched.times} vez(es).",
+                            hitsEntry.value, timesRowMatched.times)
                     }
                 }
         }
