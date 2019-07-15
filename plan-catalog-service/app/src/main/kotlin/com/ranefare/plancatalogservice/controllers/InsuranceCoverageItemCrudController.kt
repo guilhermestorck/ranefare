@@ -1,6 +1,8 @@
 package com.ranefare.plancatalogservice.controllers
 
-import com.ranefare.plancatalogservice.contract.contracts.CrudInsuranceCoverageItemContract
+import com.ranefare.plancatalogservice.contract.contracts.CreateInsuranceCoverageItemContract
+import com.ranefare.plancatalogservice.contract.contracts.GetAllInsuranceCoverageItemsContract
+import com.ranefare.plancatalogservice.contract.contracts.GetInsuranceCoverageItemContract
 import com.ranefare.plancatalogservice.contract.domains.GetAllResponse
 import com.ranefare.plancatalogservice.contract.domains.resources.InsuranceCoverageItemResource
 import com.ranefare.plancatalogservice.controllers.assemblers.InsuranceCoverageItemResourceToInsuranceCoverageItemAssembler
@@ -9,7 +11,11 @@ import com.ranefare.plancatalogservice.core.usecases.insurancecoverageitem.Creat
 import com.ranefare.plancatalogservice.core.usecases.insurancecoverageitem.GetAllInsuranceCoverageItemsUseCase
 import com.ranefare.plancatalogservice.core.usecases.insurancecoverageitem.GetInsuranceCoverageItemUseCase
 import io.micronaut.http.HttpResponse
-import io.micronaut.http.annotation.*
+import io.micronaut.http.annotation.Body
+import io.micronaut.http.annotation.Controller
+import io.micronaut.http.annotation.Get
+import io.micronaut.http.annotation.PathVariable
+import io.micronaut.http.annotation.Post
 import javax.inject.Inject
 
 @Controller("/insurance/coverage-items")
@@ -19,7 +25,9 @@ class InsuranceCoverageItemCrudController @Inject constructor(
     private val getAllUseCase: GetAllInsuranceCoverageItemsUseCase,
     private val resourceConverter: InsuranceCoverageItemToInsuranceCoverageItemResourceConverter,
     private val resourceAssembler: InsuranceCoverageItemResourceToInsuranceCoverageItemAssembler
-) : CrudInsuranceCoverageItemContract {
+) : CreateInsuranceCoverageItemContract,
+    GetInsuranceCoverageItemContract,
+    GetAllInsuranceCoverageItemsContract {
 
     @Post
     override fun create(@Body resource: InsuranceCoverageItemResource): HttpResponse<InsuranceCoverageItemResource> {

@@ -1,6 +1,8 @@
 package com.ranefare.fipe.controllers
 
-import com.ranefare.fipe.contract.contracts.FipeContract
+import com.ranefare.fipe.contract.contracts.GetBrandsContract
+import com.ranefare.fipe.contract.contracts.GetDetailsContract
+import com.ranefare.fipe.contract.contracts.GetModelsContract
 import com.ranefare.fipe.contract.domains.getBrands.GetBrandsResponse
 import com.ranefare.fipe.contract.domains.getDetails.GetDetailsResponse
 import com.ranefare.fipe.contract.domains.getModels.GetModelsResponse
@@ -25,7 +27,7 @@ class FipeController(
     private val vehicleBrandsToGetBrandsResponseConverter: VehicleBrandsToGetBrandsResponseConverter,
     private val vehiclesToGetModelsResponseConverter: VehiclesToGetModelsResponseConverter,
     private val vehicleDetailsToGetDetailsResponseConverter: VehicleDetailsToGetDetailsResponseConverter
-) : FipeContract {
+) : GetModelsContract, GetBrandsContract, GetDetailsContract {
 
     @Get("/brands")
     override fun getBrands(): HttpResponse<GetBrandsResponse> = HttpResponse.ok(
@@ -38,11 +40,13 @@ class FipeController(
     override fun getModels(brandId: Int): HttpResponse<GetModelsResponse> {
         return HttpResponse.ok(
             vehiclesToGetModelsResponseConverter.convert(
-                obtainVehicles.execute(VehicleBrand(
-                    id = brandId,
-                    name = null,
-                    vehicleType = VehicleType.CARS
-                ))
+                obtainVehicles.execute(
+                    VehicleBrand(
+                        id = brandId,
+                        name = null,
+                        vehicleType = VehicleType.CARS
+                    )
+                )
             )
         )
     }
@@ -51,15 +55,17 @@ class FipeController(
     override fun getDetails(brandId: Int, modelId: String): HttpResponse<GetDetailsResponse> {
         return HttpResponse.ok(
             vehicleDetailsToGetDetailsResponseConverter.convert(
-                obtainDetails.execute(Vehicle(
-                    id = modelId,
-                    name = null,
-                    brand = VehicleBrand(
-                        id = brandId,
+                obtainDetails.execute(
+                    Vehicle(
+                        id = modelId,
                         name = null,
-                        vehicleType = VehicleType.CARS
+                        brand = VehicleBrand(
+                            id = brandId,
+                            name = null,
+                            vehicleType = VehicleType.CARS
+                        )
                     )
-                ))
+                )
             )
         )
     }

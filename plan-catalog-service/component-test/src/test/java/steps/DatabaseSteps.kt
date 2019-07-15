@@ -1,5 +1,6 @@
 package steps
 
+import conf.DatabaseTable
 import cucumber.api.DataTable
 import cucumber.api.java8.En
 import gateways.DatabaseGateway
@@ -13,24 +14,24 @@ class DatabaseSteps : En {
             DatabaseGateway.cleanDatabase()
         }
 
-        Given("^the \"([^\"]*)\" table has the following rows:$") { tableName: String, rows: DataTable ->
+        Given("^the \"([^\"]*)\" table has the following rows:$") { table: DatabaseTable, rows: DataTable ->
             rows.asMaps(String::class.java, String::class.java).forEach { row ->
-                DatabaseGateway.insertRow(tableName, row)
+                DatabaseGateway.insertRow(table.tableName, row)
             }
         }
 
-        Then("^the \"([^\"]*)\" table contains (\\d+) rows$") { tableName: String, count: Int ->
-            val rowCount = DatabaseGateway.countRows(tableName)
-            val assertErrorMessage = "The table $tableName contains $rowCount rows"
+        Then("^the \"([^\"]*)\" table contains (\\d+) rows$") { table: DatabaseTable, count: Int ->
+            val rowCount = DatabaseGateway.countRows(table.tableName)
+            val assertErrorMessage = "The table ${table.tableName} contains $rowCount rows"
 
             assertEquals(assertErrorMessage, rowCount, count)
         }
 
-        Then("the \"([^\"]*)\" table contains the following rows:") { tableName: String, rows: DataTable ->
+        Then("the \"([^\"]*)\" table contains the following rows:") { table: DatabaseTable, rows: DataTable ->
             rows.asMaps(String::class.java, String::class.java).forEach { row ->
-                val assertErrorMessage = "The row $row was not found on table \"$tableName\""
+                val assertErrorMessage = "The row $row was not found on table \"${table.tableName}\""
 
-                assertEquals(assertErrorMessage, DatabaseGateway.containsRow(tableName, row), true)
+                assertEquals(assertErrorMessage, DatabaseGateway.containsRow(table.tableName, row), true)
             }
         }
 

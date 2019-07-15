@@ -36,7 +36,8 @@ class FipeControllerSpec : Spek({
             obtainDetails,
             vehicleBrandsToGetBrandsResponseConverter,
             vehiclesToGetModelsResponseConverter,
-            vehicleDetailsToGetDetailsResponseConverter)
+            vehicleDetailsToGetDetailsResponseConverter
+        )
     }
 
     describe("#getBrands") {

@@ -8,7 +8,7 @@ group "com.ranefare"
 repositories {
     maven {
         name = "localRepo"
-        url = file("../repo")
+        url = file("~/.localrepo")
     }
     jcenter()
     mavenCentral()
@@ -45,7 +45,7 @@ publishing {
     repositories {
         maven {
             name = "localRepo"
-            url = file("../repo")
+            url = file("~/.localrepo")
         }
     }
 }

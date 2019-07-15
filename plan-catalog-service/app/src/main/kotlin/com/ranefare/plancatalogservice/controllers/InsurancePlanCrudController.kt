@@ -1,13 +1,26 @@
 package com.ranefare.plancatalogservice.controllers
 
-import com.ranefare.plancatalogservice.contract.contracts.CrudInsurancePlanContract
+import com.ranefare.plancatalogservice.contract.contracts.AddCoverageItemToInsurancePlanContract
+import com.ranefare.plancatalogservice.contract.contracts.CreateInsurancePlanContract
+import com.ranefare.plancatalogservice.contract.contracts.GetAllInsurancePlansContract
+import com.ranefare.plancatalogservice.contract.contracts.GetInsurancePlanContract
+import com.ranefare.plancatalogservice.contract.contracts.RemoveCoverageItemToInsurancePlanContract
 import com.ranefare.plancatalogservice.contract.domains.GetAllResponse
 import com.ranefare.plancatalogservice.contract.domains.resources.InsurancePlanResource
 import com.ranefare.plancatalogservice.controllers.assemblers.InsurancePlanResourceToInsurancePlanAssembler
 import com.ranefare.plancatalogservice.controllers.converters.InsurancePlanToInsurancePlanResourceConverter
-import com.ranefare.plancatalogservice.core.usecases.insuranceplan.*
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.AddCoverageItemToInsurancePlanUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.CreateInsurancePlanUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.GetAllInsurancePlansUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.GetInsurancePlanUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.RemoveCoverageItemFromInsurancePlanUseCase
 import io.micronaut.http.HttpResponse
-import io.micronaut.http.annotation.*
+import io.micronaut.http.annotation.Body
+import io.micronaut.http.annotation.Controller
+import io.micronaut.http.annotation.Delete
+import io.micronaut.http.annotation.Get
+import io.micronaut.http.annotation.PathVariable
+import io.micronaut.http.annotation.Post
 import javax.inject.Inject
 
 @Controller("/insurance/plans")
@@ -19,7 +32,11 @@ class InsurancePlanCrudController @Inject constructor(
     private val removeCoverageItemFromInsurancePlanUseCase: RemoveCoverageItemFromInsurancePlanUseCase,
     private val resourceConverter: InsurancePlanToInsurancePlanResourceConverter,
     private val resourceAssembler: InsurancePlanResourceToInsurancePlanAssembler
-) : CrudInsurancePlanContract {
+) : CreateInsurancePlanContract,
+    GetInsurancePlanContract,
+    GetAllInsurancePlansContract,
+    AddCoverageItemToInsurancePlanContract,
+    RemoveCoverageItemToInsurancePlanContract {
 
     @Post
     override fun create(@Body resource: InsurancePlanResource): HttpResponse<InsurancePlanResource> {

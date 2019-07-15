@@ -1,7 +1,7 @@
 package gateways
 
 import conf.Config
-import conf.DatabaseTables
+import conf.DatabaseTable
 import java.sql.DriverManager
 import java.util.Properties
 
@@ -21,7 +21,7 @@ object DatabaseGateway {
     }
 
     fun cleanDatabase() {
-        DatabaseTables.values().forEach { table ->
+        DatabaseTable.values().forEach { table ->
             connection.prepareStatement("DELETE FROM ${table.tableName}").execute()
         }
     }

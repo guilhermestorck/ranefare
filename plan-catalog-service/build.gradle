@@ -5,5 +5,4 @@ buildscript {
 subprojects {
     apply from: file("../../gradle-common/project.common.gradle")
     version '0.1'
-    group 'plan-catalog-service'
 }

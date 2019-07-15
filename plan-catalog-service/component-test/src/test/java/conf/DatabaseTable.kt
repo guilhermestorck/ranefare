@@ -1,6 +1,6 @@
 package conf
 
-enum class DatabaseTables(
+enum class DatabaseTable(
     val tableName: String
 ) {
     INSURANCE_PLANS_INSURANCE_COVERAGE_ITEMS("INSURANCE_PLANS_INSURANCE_COVERAGE_ITEMS"),

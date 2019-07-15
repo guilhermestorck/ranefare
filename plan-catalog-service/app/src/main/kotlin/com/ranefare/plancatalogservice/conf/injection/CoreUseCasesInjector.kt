@@ -5,7 +5,11 @@ import com.ranefare.plancatalogservice.core.repositories.InsurancePlanRepository
 import com.ranefare.plancatalogservice.core.usecases.insurancecoverageitem.CreateInsuranceCoverageItemUseCase
 import com.ranefare.plancatalogservice.core.usecases.insurancecoverageitem.GetAllInsuranceCoverageItemsUseCase
 import com.ranefare.plancatalogservice.core.usecases.insurancecoverageitem.GetInsuranceCoverageItemUseCase
-import com.ranefare.plancatalogservice.core.usecases.insuranceplan.*
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.AddCoverageItemToInsurancePlanUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.CreateInsurancePlanUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.GetAllInsurancePlansUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.GetInsurancePlanUseCase
+import com.ranefare.plancatalogservice.core.usecases.insuranceplan.RemoveCoverageItemFromInsurancePlanUseCase
 import io.micronaut.context.annotation.Factory
 import javax.inject.Singleton
 
