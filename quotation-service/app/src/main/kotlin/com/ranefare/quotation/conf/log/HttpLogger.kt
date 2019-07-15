@@ -5,7 +5,7 @@ import io.micronaut.http.HttpHeaders
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpResponse
 import net.logstash.logback.argument.StructuredArguments.value
-import java.util.*
+import java.util.Optional
 
 open class HttpLogger {
 
@@ -16,8 +16,7 @@ open class HttpLogger {
         log.debug(
             message,
             value("METHOD", request?.method),
-            value("PATH", request?.path),
-            value("DESTINATION", request?.serverName),
+            value("URI", request?.uri.toString()),
             value("HEADERS", logHeaders(request?.headers)),
             value("BODY", logBody(request?.body))
         )

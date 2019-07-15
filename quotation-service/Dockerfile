@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
 
-COPY app/build/libs/app.jar app.jar
+COPY app/build/libs/quotation-service-app.jar app.jar
 
 EXPOSE 8080
 

@@ -1,0 +1,17 @@
+- request:
+    url: /insurance/coverage-items
+    method: GET
+  response:
+    headers:
+      Content-Type: application/json
+    status: 200
+    file: json/get-all-coverage-items-response.json
+
+- request:
+    url: /insurance/plans
+    method: GET
+  response:
+    headers:
+      Content-Type: application/json
+    status: 200
+    file: json/get-all-plans-response.json

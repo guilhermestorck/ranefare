@@ -1,0 +1,7 @@
+{
+  "generator-sas-microservice": {
+    "serviceName": "quotation-service",
+    "rootPackage": "com.ranefare.quotation",
+    "hasDatabase": false
+  }
+}

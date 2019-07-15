@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  consul:
+    image: consul
+    networks:
+      - consul-network
+    ports:
+      - "8500:8500"
+
+  mocks:
+    build: ../mocks
+    networks:
+      - consul-network
+    depends_on:
+      - consul
+    ports:
+      - "8081:8081"
+      - "8905:8905"
+      - "8082:8082"
+      - "8906:8906"
+
+networks:
+  consul-network:
+    driver: bridge

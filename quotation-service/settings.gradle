@@ -1,4 +1,4 @@
-rootProject.name = "quotation-service"
+rootProject.name="quotation-service"
 include 'app'
 include 'core'
 include 'contract'

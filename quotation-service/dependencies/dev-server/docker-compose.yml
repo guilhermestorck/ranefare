@@ -1,0 +1,28 @@
+version: "2"
+services:
+
+  consul:
+    image: consul
+    networks:
+      - consul-network
+    ports:
+      - "8500:8500"
+
+  app:
+    build: ../../
+    networks:
+      - consul-network
+    ports:
+      - "8080:8080"
+    depends_on:
+      - consul
+      - postgres
+    environment:
+      - CONSUL_HOST=consul
+      - CONSULT_PORT=8500
+
+
+networks:
+
+  consul-network:
+    driver: bridge

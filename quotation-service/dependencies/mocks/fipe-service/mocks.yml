@@ -1,0 +1,8 @@
+- request:
+    url: /fipe/brands/.*/models/.*/details
+    method: GET
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: json/get-details-response.json
